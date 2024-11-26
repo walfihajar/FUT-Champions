@@ -11,6 +11,94 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <style>
+        body{
+            color: rgba(43, 41, 41, 0.858);
+        }
+        .badge_gold{
+            display: flex;
+            flex-direction: column;
+            gap :4px;
+            background-size: contain;
+            background-image: url('img/badge_gold.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            width:180px;
+            height:240px;
+         
+        }  
+        .ST_G{
+            grid-column-start: 2;
+
+        }   
+        .nom{
+            font-weight: 900;
+            font-size : 16px ;
+            text-align: center;  
+        }
+        .statistique{
+            display:flex;
+            font-weight: 700;
+            font-size : 8px ;
+            justify-content: center;
+            gap:8px;
+        }
+
+        .statistique div{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .flag{
+            display: flex;
+            justify-content: center;
+            gap:8px;
+            align-items: center;
+
+        }
+        .flag img{
+            width: 16px;
+            height: 16px;
+        }
+        .photo{
+           /* w-full h-3/5  mx-auto flex  justify-center ;*/
+            display: flex;
+            width: 100%;
+            height:60%;
+            margin: 0 auto;
+            justify-content: center;
+
+        }
+
+         @media(max-width:760px){
+            .badge_gold{
+            width:90px;
+            height:120px;
+            gap:2px ; 
+         
+        } 
+
+            .photo{
+           /* w-full h-3/5  mx-auto flex  justify-center ;*/
+            display: flex;
+            width: 40%;
+            height:30%;
+            margin: 0 auto;
+            justify-content: center;
+
+        }
+        .nom{
+            font-weight: 800;
+            font-size : 12px ;
+            text-align: center;  
+        }
+        .statistique{
+            flex-wrap: wrap;
+            gap:2px;
+            font-size: 6px;
+        }
+         }
+    </style>
 </head>
 
 <body class="flex flex-col">
@@ -24,41 +112,64 @@
     <!-- End Header -->
 
  <section class="flex">
-    <section  class=" h-[100%] w-[100%]  bg-contain bg-center  bg-no-repeat  bg-[url('img/field.jpg')] pt-9  grid grid-rows-4">
-        <div class="last3 border border-dashed border-blue-700 flex gap-8 items-end justify-center">
-            <div><img src="./img/badge_gold.png"></div>
-            <div><img src="./img/badge_gold.png"></div>
-            <div><img src="./img/badge_gold.png"></div>
-        </div>
-        <div class="first3  border border-dashed border-red-700 flex gap-8  items-end justify-center">
-            <div><img src="./img/badge_gold.png"></div>
-            <div><img src="./img/badge_gold.png"></div>
-            <div><img src="./img/badge_gold.png"></div>
-        </div>
-        <div class="otherfour  border border-dashed border-yellow-700 flex gap-4 items-end justify-center ">
-            <div><img src="./img/badge_gold.png"></div>
-            <div><img src="./img/badge_gold.png"></div>
-            <div><img src="./img/badge_gold.png"></div>
-        </div>
-        <div class="goal border border-dashed border-yellow-700 flex gap-4 items-first justify-center " >
-            <div><img src="./img/badge_gold.png"></div>
-        </div>
+    <section  class=" h-[100%] w-[80%]  bg-contain bg-center  bg-no-repeat  bg-[url('img/stadium_background.webp')]  grid grid-rows-4">
+        <div class="last3 border border-dashed border-blue-700 flex gap-4 items-start justify-center  ">
+            <div class="ST_G"> 
+                <div class="badge_gold" >
+                    <div class="photo">
+                        <img src="https://cdn.sofifa.net/players/158/023/25_120.png" class=" " alt="joueur">
+                    </div>
+                    <h4 class="nom">Messi</h4>
+                    <div class="statistique">
+                
+                            <div>
+                                <h5>PAC</h5> 
+                                <h4>80</h4>
+                            </div>
+                            <div >
+                                <h5>SHO</h5> 
+                                <h4>80</h4>
+                            </div>
+                            <div >
+                                <h5>PAS</h5> 
+                                <h4>80</h4>
+                            </div>
+                            <div >
+                                <h5>DRI</h5> 
+                                <h4>80</h4>
+                            </div>
+                            <div >
+                                <h5>DEF</h5> 
+                                <h4>80</h4>
+                            </div>
+                            <div >
+                                <h5>PHY</h5> 
+                                <h4>64</h4>
+                            </div>
+                
+                    </div>
+                    <div class="flag">
+                        <img src="https://cdn.sofifa.net/flags/ar.png" alt="nationalite">
+                        <img src="https://cdn.sofifa.net/flags/ar.png"  alt="flag">
+                        <img src="https://cdn.sofifa.net/meta/team/239235/120.png"  alt="logoJr">
+                    </div>
+                </div>
+            
     </section> 
 <!-- Start Player Cards -->
-    <section  id="chosen" class="w-[80%] flex flex-col py-3 gap-4 border border-dashed border-red-500 items-center ">
+    <section  id="chosen" class="w-[20%] flex flex-col py-3 gap-4 border border-dashed border-red-500 items-center ">
         <h1 class=" font-bold border border-dashed border-red-500">Chosen Players</h1>
-        <div id="player-card" class="bg-red-400">
+        <div id="player-card" class="bg-red-400 w-full p-1">
             <div class="grid grid-cols-2  border border-dashed border-red-500 flex items-center">
                 <div class="flex justify-center">
                     <img src="https://cdn.sofifa.net/players/020/801/25_120.png" alt="cristiano ronaldo">
                 </div>
                 <div class="text-center">
-                    <p>Cristiano Ronaldo</p>
+                    <p>Cristiano</p>
                     <p>position</p>
-                    <p>Note</p>
                 </div>
             </div>
-            <div class="flex justify-center gap-10 w-full">
+            <div class="flex justify-around  w-full">
                 <button>delete</button>
                 <button>Edit</button>
             </div>
@@ -79,50 +190,50 @@
                 <div class="flex flex-col gap-1">
                     <label for="position">Position:</label>
                     <select id="position" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                        <option value="ailier-gauche">Ailier Gauche (LW)</option>
-                        <option value="attaquant-central">Attaquant Central (ST)</option>
-                        <option value="alier-droit">Alier Droit (RW) </option>
-                        <option value="milieu-central-G">Milieu central (CM) : gauche</option>
-                        <option value="milieu-central-M">Milieu central (CM) : milieu</option>
-                        <option value="milieu-central-D">Milieu central (CM) : droit</option>
-                        <option value="lateral-gauche">Latéral gauche (LB)</option>
-                        <option value="defenseur-central-D">Défenseur Central (CB) : Droit</option>
-                        <option value="defenseur-Central-G">Défenseur Central (CB) : Gauche</option>
-                        <option value="done">Latéral droit (RB)</option>
-                        <option value="done">Goal Keeper (GK)</option>
+                        <option value="lw">Ailier Gauche (LW)</option>
+                        <option value="st">Attaquant Central (ST)</option>
+                        <option value="rw">Alier Droit (RW) </option>
+                        <option value="cmg">Milieu central (CM) : gauche</option>
+                        <option value="cmm">Milieu central (CM) : milieu</option>
+                        <option value="cmd">Milieu central (CM) : droit</option>
+                        <option value="lb">Latéral gauche (LB)</option>
+                        <option value="cbd">Défenseur Central (CB) : Droit</option>
+                        <option value="cbg">Défenseur Central (CB) : Gauche</option>
+                        <option value="rb">Latéral droit (RB)</option>
+                        <option value="gk">Goal Keeper (GK)</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-1">
-                    <label for="title">Note:</label>
-                    <input type="number" id="title" name="title" placeholder="Entrez la note du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                    <label for="note">Note:</label>
+                    <input type="number" id="note" name="note" placeholder="Entrez la note du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                 </div>
                 
                 <div class="flex flex-col gap-1">
-                    <label for="date">Statistiques:</label>
+                    <label for="Statistiques">Statistiques:</label>
                     <div class="grid grid-cols-3 gap-1">
                         <div class="flex flex-col">
-                            <label for="PAC">PAC:</label>
-                            <input type="number" id="PAC" placeholder="PAC" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label for="pac">PAC:</label>
+                            <input type="number" id="pac" placeholder="PAC" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                           </div>
                           <div class="flex flex-col">
-                              <label for="SHO">SHO:</label>
-                              <input type="number" id="SHO" placeholder="SHO" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                              <label for="sho">SHO:</label>
+                              <input type="number" id="sho" placeholder="SHO" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                           </div>
                           <div class="flex flex-col">
-                             <label for="PAS">PAS:</label>
-                             <input type="number" id="PAS" placeholder="PAS" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                             <label for="pas">PAS:</label>
+                             <input type="number" id="pas" placeholder="PAS" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                           </div>
                           <div class="flex flex-col">
-                            <label for="DRI">DRI:</label>
-                            <input type="number" id="DRI" placeholder="DRI" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label for="dri">DRI:</label>
+                            <input type="number" id="dri" placeholder="DRI" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                          </div>
                          <div class="flex flex-col">
-                            <label for="DEF">DEF:</label>
-                            <input type="number" id="DEF" placeholder="DEF" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label for="def">DEF:</label>
+                            <input type="number" id="def" placeholder="DEF" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                          </div>
                          <div class="flex flex-col">
-                            <label for="PHY">PHY:</label>
-                            <input type="number" id="PHY" placeholder="PHY" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label for="phy">PHY:</label>
+                            <input type="number" id="phy" placeholder="PHY" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                          </div>
                     </div>
                     <div class="flex flex-col gap-1">
