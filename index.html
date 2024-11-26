@@ -23,7 +23,7 @@
     </div>
     <!-- End Header -->
 
- <section class="flex ">
+ <section class="flex">
     <section  class=" h-[100%] w-[100%]  bg-contain bg-center  bg-no-repeat  bg-[url('img/field.jpg')] pt-9  grid grid-rows-4">
         <div class="last3 border border-dashed border-blue-700 flex gap-8 items-end justify-center">
             <div><img src="./img/badge_gold.png"></div>
@@ -43,7 +43,28 @@
         <div class="goal border border-dashed border-yellow-700 flex gap-4 items-first justify-center " >
             <div><img src="./img/badge_gold.png"></div>
         </div>
-    </section>  
+    </section> 
+<!-- Start Player Cards -->
+    <section  id="chosen" class="w-[80%] flex flex-col py-3 gap-4 border border-dashed border-red-500 items-center ">
+        <h1 class=" font-bold border border-dashed border-red-500">Chosen Players</h1>
+        <div id="player-card" class="bg-red-400">
+            <div class="grid grid-cols-2  border border-dashed border-red-500 flex items-center">
+                <div class="flex justify-center">
+                    <img src="https://cdn.sofifa.net/players/020/801/25_120.png" alt="cristiano ronaldo">
+                </div>
+                <div class="text-center">
+                    <p>Cristiano Ronaldo</p>
+                    <p>position</p>
+                    <p>Note</p>
+                </div>
+            </div>
+            <div class="flex justify-center gap-10 w-full">
+                <button>delete</button>
+                <button>Edit</button>
+            </div>
+        </div>
+     </section>
+<!-- End Player Cards -->
     <!-- start Modal -->
     <section id="modal" class="hidden">
         <span class="absolute right-5 material-symbols-outlined">cancel</span>
@@ -128,7 +149,7 @@
     
     </section>
     <!-- end modal -->
- 
+
  
     <script src="./js/script.js"></script>
  <!-- Start Footer-------------------------------------------------------------------------------------------------------------------------------------- -->
