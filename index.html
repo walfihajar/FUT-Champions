@@ -5,15 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUT Champions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
-<body>
+<body class="flex flex-col">
+    <!-- Start Header -------------------------------------------------------------------->
+    <div class="title bg-blue-50 flex justify-center items-center gap-6 h-20 p-2">
+        <a href="#" class="hover:text-purple-400"><h5 class="font-bold">Home</h5></a>
+        <a href="#" class="hover:text-purple-400" ><h5 class="font-bold">About</h5></a>
+        <a href="#" class="hover:text-purple-400"><h5 class="font-bold">Contact</h5></a>
+        <button id="new" class="focus:outline-none bg-blue-200 px-4 py-3 rounded-full flex gap-4 hover:bg-white hover:text-blue-800"><span class="font-bold">New</span></button>
+    </div>
+    <!-- End Header -->
 
+ <section class="flex ">
+    <section  class=" h-[100%] w-[100%]  bg-contain bg-center  bg-no-repeat  bg-[url('img/field.jpg')] pt-9  grid grid-rows-4">
+        <div class="last3 border border-dashed border-blue-700 flex gap-8 items-end justify-center">
+            <div><img src="./img/example_1.png"></div>
+            <div><img src="./img/example_1.png"></div>
+            <div><img src="./img/example_1.png"></div>
+        </div>
+        <div class="first3  border border-dashed border-red-700 flex gap-8  items-end justify-center">
+            <div><img src="./img/example_1.png"></div>
+            <div><img src="./img/example_1.png"></div>
+            <div><img src="./img/example_1.png"></div>
+        </div>
+        <div class="otherfour  border border-dashed border-yellow-700 flex gap-4 items-end justify-center ">
+            <div><img src="./img/example_1.png"></div>
+            <div><img src="./img/example_1.png"></div>
+            <div><img src="./img/example_1.png"></div>
+            <div><img src="./img/example_1.png"></div>
+        </div>
+        <div class="otherfour  border border-dashed border-yellow-700 flex gap-4 items-first justify-center " >
+            <div><img src="./img/example_1.png"></div>
+        </div>
+    </section>  
+    <!-- start Modal -->
+    <section id="modal">
+        <span class="absolute right-5 material-symbols-outlined">cancel</span>
 
-    <script src="./js/script.js"></script>
+        <div class="bg-blue-50 p-5 h-full">
+
+            <form id="form" class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1">
+                    <label for="nom">Nom du joueur:</label>
+                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom de joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label for="position">Position:</label>
+                    <select id="position" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                        <option value="ailier-gauche">Ailier Gauche (LW)</option>
+                        <option value="attaquant-central">Attaquant Central (ST)</option>
+                        <option value="alier-droit">Alier Droit (RW) </option>
+                        <option value="milieu-central-G">Milieu central (CM) : gauche</option>
+                        <option value="milieu-central-M">Milieu central (CM) : milieu</option>
+                        <option value="milieu-central-D">Milieu central (CM) : droit</option>
+                        <option value="lateral-gauche">Latéral gauche (LB)</option>
+                        <option value="defenseur-central-D">Défenseur Central (CB) : Droit</option>
+                        <option value="defenseur-Central-G">Défenseur Central (CB) : Gauche</option>
+                        <option value="done">Latéral droit (RB)</option>
+                        <option value="done">Goal Keeper (GK)</option>
+                    </select>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label for="title">Note:</label>
+                    <input type="number" id="title" name="title" placeholder="Entrez la note du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                </div>
+                
+                <div class="flex flex-col gap-1">
+                    <label for="date">Statistiques:</label>
+                    <div class="grid grid-cols-3 gap-1">
+                        <div class="flex flex-col">
+                            <label for="PAC">PAC:</label>
+                            <input type="number" id="PAC" placeholder="PAC" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                          </div>
+                          <div class="flex flex-col">
+                              <label for="SHO">SHO:</label>
+                              <input type="number" id="SHO" placeholder="SHO" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                          </div>
+                          <div class="flex flex-col">
+                             <label for="PAS">PAS:</label>
+                             <input type="number" id="PAS" placeholder="PAS" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                          </div>
+                          <div class="flex flex-col">
+                            <label for="DRI">DRI:</label>
+                            <input type="number" id="DRI" placeholder="DRI" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                         </div>
+                         <div class="flex flex-col">
+                            <label for="DEF">DEF:</label>
+                            <input type="number" id="DEF" placeholder="DEF" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                         </div>
+                         <div class="flex flex-col">
+                            <label for="PHY">PHY:</label>
+                            <input type="number" id="PHY" placeholder="PHY" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                         </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label for="nationalité">Nationalité:</label>
+                        <input type="url" id="nationalité" name="nationalité" placeholder="Entrez la nationalité du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label for="ligue">Ligue:</label>
+                        <input type="url" id="ligue" name="ligue" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label for="club">Club:</label>
+                        <input type="url" id="club" name="club" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                    </div>
+                </div>
+            </form>
+
+            <div class="flex gap-4">
+                <button id="save" class="mt-4 bg-blue-200 w-[50%] text-white hover:bg-blue-400 py-2 rounded-md">Save</button>
+                <button id="cancel" class="mt-4 bg-red-200 w-[50%] text-white hover:bg-red-400 py-2 rounded-md">Cancel</button>
+            </div>
+
+        </div>
+    
+    </section>
+    <!-- end modal -->
+ 
+
+ <!-- Start Footer-------------------------------------------------------------------------------------------------------------------------------------- -->
+
+     
+
+ <!-- End Footer----------------------------------------------------------------------------------------------------------------------------------- -->
 </body>
 </html>
