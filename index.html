@@ -11,97 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <style>
-        body{
-            color: rgba(43, 41, 41, 0.858);
-        }
-        .badge_gold{
-            display: flex;
-            flex-direction: column;
-            gap :4px;
-            background-size: contain;
-            background-image: url('img/badge_gold.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            width:180px;
-            height:240px;
-         
-        }  
-        .ST_G{
-            grid-column-start: 2;
-
-        }   
-        .nom{
-            font-weight: 900;
-            font-size : 16px ;
-            text-align: center;  
-        }
-        .statistique{
-            display:flex;
-            font-weight: 700;
-            font-size : 8px ;
-            justify-content: center;
-            gap:8px;
-        }
-
-        .statistique div{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .flag{
-            display: flex;
-            justify-content: center;
-            gap:8px;
-            align-items: center;
-
-        }
-        .flag img{
-            width: 16px;
-            height: 16px;
-        }
-        .photo{
-           /* w-full h-3/5  mx-auto flex  justify-center ;*/
-            display: flex;
-            width: 100%;
-            height:60%;
-            margin: 0 auto;
-            justify-content: center;
-
-        }
-
-         @media(max-width:760px){
-            .badge_gold{
-            width:90px;
-            height:120px;
-            gap:2px ; 
-         
-        } 
-
-            .photo{
-           /* w-full h-3/5  mx-auto flex  justify-center ;*/
-            display: flex;
-            width: 40%;
-            height:30%;
-            margin: 0 auto;
-            justify-content: center;
-
-        }
-        .nom{
-            font-weight: 800;
-            font-size : 12px ;
-            text-align: center;  
-        }
-        .statistique{
-            flex-wrap: wrap;
-            gap:2px;
-            font-size: 6px;
-        }
-         }
-    </style>
 </head>
 
 <body class="flex flex-col">
+
+
     <!-- Start Header -------------------------------------------------------------------->
     <div class="title bg-blue-50 flex justify-center items-center gap-6 h-20 p-2">
         <a href="#" class="hover:text-purple-400"><h5 class="font-bold">Home</h5></a>
@@ -111,17 +25,26 @@
     </div>
     <!-- End Header -->
 
- <section class="flex">
-    <section  class=" h-[100%] w-[80%]  bg-contain bg-center  bg-no-repeat  bg-[url('img/stadium_background.webp')]  grid grid-rows-4">
-        <div class="last3 border border-dashed border-blue-700 flex gap-4 items-start justify-center  ">
-            <div class="ST_G"> 
-                <div class="badge_gold" >
-                    <div class="photo">
-                        <img src="https://cdn.sofifa.net/players/158/023/25_120.png" class=" " alt="joueur">
+
+    <!-- Everything else in the middle between header and footer -->
+ <section class="grid  grid-cols-1 md:grid-cols-[70%_30%]">
+        <!-- Terrain -->
+        <section  class="w-[100%] h-[200vh] bg-center bg-[length:100%_100%] bg-no-repeat  bg-[url('img/field.jpg')] grid grid-cols-5 grid-rows-3 ">
+            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+                <!-- card of player1 -->
+                <div class="badge_gold flex flex-col  bg-contain bg-[url('img/badge_gold.png')] bg-center bg-no-repeat w-[140px] h-[200px]" >
+
+                    <!-- photo -->
+                    <div class="photo flex w-full h-[60%] justify-center">
+                        <img src="https://cdn.sofifa.net/players/158/023/25_120.png"  alt="joueur">
                     </div>
-                    <h4 class="nom">Messi</h4>
-                    <div class="statistique">
-                
+                    
+                    <div class="h-[40%]">
+                        <!-- Nom -->
+                        <h4 class="nom text-center">Messi</h4>
+
+                        <!-- Statistiques -->
+                        <div class="statistique flex justify-center gap-1">
                             <div>
                                 <h5>PAC</h5> 
                                 <h4>80</h4>
@@ -146,127 +69,140 @@
                                 <h5>PHY</h5> 
                                 <h4>64</h4>
                             </div>
-                
+                        </div>
+
+                        <!-- Flag / club / Nationality -->
+                        <div class="flag flex justify-center gap-1 align-middle">
+                            <img class="w-[16px] h-[16px]" src="https://cdn.sofifa.net/flags/ar.png" alt="nationalite">
+                            <img class="w-[16px] h-[16px]" src="https://cdn.sofifa.net/flags/ar.png"  alt="flag">
+                            <img class="w-[16px] h-[16px]" src="https://cdn.sofifa.net/meta/team/239235/120.png"  alt="logoJr">
+                        </div>
+
                     </div>
-                    <div class="flag">
-                        <img src="https://cdn.sofifa.net/flags/ar.png" alt="nationalite">
-                        <img src="https://cdn.sofifa.net/flags/ar.png"  alt="flag">
-                        <img src="https://cdn.sofifa.net/meta/team/239235/120.png"  alt="logoJr">
-                    </div>
+                    
                 </div>
+            </div>            
+        </section> 
+        <!-- End terrain -->
+
+
+        <!-- Start Player Cards -->
+        <section  id="chosen" class="w-full flex flex-col py-3 gap-4 border border-dashed border-red-500 items-center ">
+                    <h1 class=" font-bold border border-dashed border-red-500">Chosen Players</h1>
+                    <div id="player-card" class="bg-red-400 w-full p-1">
+                        <div class="grid grid-cols-2  border border-dashed border-red-500 flex items-center">
+                            <div class="flex justify-center">
+                                <img src="https://cdn.sofifa.net/players/020/801/25_120.png" alt="cristiano ronaldo">
+                            </div>
+                            <div class="text-center">
+                                <p>Cristiano</p>
+                                <p>position</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-around  w-full">
+                            <button>delete</button>
+                            <button>Edit</button>
+                        </div>
+                    </div>
+        </section>
+        <!-- End Player Cards -->
+
+
+      <!-- start Modal -->
+<section id="modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
+    <!-- Modal content -->
+    <div class="bg-blue-50 p-6 md:h-[50%] max-w-lg w-[70%] rounded-lg shadow-lg overflow-auto">
+        
+        <!-- Modal form content -->
+        <form id="form" class="flex flex-col gap-1">
+            <!-- Nom joueur -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="nom">Nom du joueur:</label>
+                <input type="text" id="nom" name="nom" placeholder="Entrez le nom de joueur" class="bg-gray-50  border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+            </div>
+
+            <!-- Position -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="position">Position:</label>
+                <select id="position" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                    <option value="lw">Ailier Gauche (LW)</option>
+                    <option value="st">Attaquant Central (ST)</option>
+                    <option value="rw">Ailier Droit (RW)</option>
+                    <option value="cmg">Milieu central (CM) : gauche</option>
+                    <option value="cmm">Milieu central (CM) : milieu</option>
+                    <option value="cmd">Milieu central (CM) : droit</option>
+                    <option value="lb">Latéral gauche (LB)</option>
+                    <option value="cbd">Défenseur Central (CB) : Droit</option>
+                    <option value="cbg">Défenseur Central (CB) : Gauche</option>
+                    <option value="rb">Latéral droit (RB)</option>
+                    <option value="gk">Goal Keeper (GK)</option>
+                </select>
+            </div>
+
+            <!-- Note -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="note">Note:</label>
+                <input type="number" id="note" name="note" placeholder="Entrez la note du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+            </div>
             
-    </section> 
-<!-- Start Player Cards -->
-    <section  id="chosen" class="w-[20%] flex flex-col py-3 gap-4 border border-dashed border-red-500 items-center ">
-        <h1 class=" font-bold border border-dashed border-red-500">Chosen Players</h1>
-        <div id="player-card" class="bg-red-400 w-full p-1">
-            <div class="grid grid-cols-2  border border-dashed border-red-500 flex items-center">
-                <div class="flex justify-center">
-                    <img src="https://cdn.sofifa.net/players/020/801/25_120.png" alt="cristiano ronaldo">
+            <!-- Statistiques (PAC, SHO, PAS, DRI, DEF, PHY) -->
+            <div class="flex justify-around gap-1 flex-wrap text-center">
+                <div class="flex flex-col">
+                    <label class="font-bold" for="pac">PAC:</label>
+                    <input type="number" id="pac" placeholder="PAC" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                 </div>
-                <div class="text-center">
-                    <p>Cristiano</p>
-                    <p>position</p>
+                <div class="flex flex-col">
+                    <label class="font-bold" for="sho">SHO:</label>
+                    <input type="number" id="sho" placeholder="SHO" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                </div>
+                <div class="flex flex-col">
+                    <label  class="font-bold" for="pas">PAS:</label>
+                    <input type="number" id="pas" placeholder="PAS" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-bold" for="dri">DRI:</label>
+                    <input type="number" id="dri" placeholder="DRI" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-bold" for="def">DEF:</label>
+                    <input type="number" id="def" placeholder="DEF" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-bold" for="phy">PHY:</label>
+                    <input type="number" id="phy" placeholder="PHY" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
                 </div>
             </div>
-            <div class="flex justify-around  w-full">
-                <button>delete</button>
-                <button>Edit</button>
+
+            <!-- Nationalité -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="nationalite">Nationalité:</label>
+                <input type="url" id="nationalite" name="nationalité" placeholder="Entrez la nationalité du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
             </div>
+
+            <!-- Ligue -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="ligue">Ligue:</label>
+                <input type="url" id="ligue" name="ligue" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+            </div>
+
+            <!-- Club -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="club">Club:</label>
+                <input type="url" id="club" name="club" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+            </div>
+        </form>
+
+        <!-- Action buttons -->
+        <div class="flex gap-4 mt-4">
+            <button id="save" class="bg-blue-200 w-[50%] text-white hover:bg-blue-400 py-2 rounded-md">Save</button>
+            <button id="cancel" class="bg-red-200 w-[50%] text-white hover:bg-red-400 py-2 rounded-md">Cancel</button>
         </div>
-     </section>
-<!-- End Player Cards -->
-    <!-- start Modal -->
-    <section id="modal" class="hidden">
-        <span class="absolute right-5 material-symbols-outlined">cancel</span>
-
-        <div class="bg-blue-50 p-5 h-full">
-
-            <form id="form" class="flex flex-col gap-1">
-                <div class="flex flex-col gap-1">
-                    <label for="nom">Nom du joueur:</label>
-                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom de joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                </div>
-                <div class="flex flex-col gap-1">
-                    <label for="position">Position:</label>
-                    <select id="position" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                        <option value="lw">Ailier Gauche (LW)</option>
-                        <option value="st">Attaquant Central (ST)</option>
-                        <option value="rw">Alier Droit (RW) </option>
-                        <option value="cmg">Milieu central (CM) : gauche</option>
-                        <option value="cmm">Milieu central (CM) : milieu</option>
-                        <option value="cmd">Milieu central (CM) : droit</option>
-                        <option value="lb">Latéral gauche (LB)</option>
-                        <option value="cbd">Défenseur Central (CB) : Droit</option>
-                        <option value="cbg">Défenseur Central (CB) : Gauche</option>
-                        <option value="rb">Latéral droit (RB)</option>
-                        <option value="gk">Goal Keeper (GK)</option>
-                    </select>
-                </div>
-                <div class="flex flex-col gap-1">
-                    <label for="note">Note:</label>
-                    <input type="number" id="note" name="note" placeholder="Entrez la note du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                </div>
-                
-                <div class="flex flex-col gap-1">
-                    <label for="Statistiques">Statistiques:</label>
-                    <div class="grid grid-cols-3 gap-1">
-                        <div class="flex flex-col">
-                            <label for="pac">PAC:</label>
-                            <input type="number" id="pac" placeholder="PAC" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                          </div>
-                          <div class="flex flex-col">
-                              <label for="sho">SHO:</label>
-                              <input type="number" id="sho" placeholder="SHO" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                          </div>
-                          <div class="flex flex-col">
-                             <label for="pas">PAS:</label>
-                             <input type="number" id="pas" placeholder="PAS" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                          </div>
-                          <div class="flex flex-col">
-                            <label for="dri">DRI:</label>
-                            <input type="number" id="dri" placeholder="DRI" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                         </div>
-                         <div class="flex flex-col">
-                            <label for="def">DEF:</label>
-                            <input type="number" id="def" placeholder="DEF" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                         </div>
-                         <div class="flex flex-col">
-                            <label for="phy">PHY:</label>
-                            <input type="number" id="phy" placeholder="PHY" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                         </div>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="nationalité">Nationalité:</label>
-                        <input type="url" id="nationalité" name="nationalité" placeholder="Entrez la nationalité du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="ligue">Ligue:</label>
-                        <input type="url" id="ligue" name="ligue" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="club">Club:</label>
-                        <input type="url" id="club" name="club" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                    </div>
-                </div>
-            </form>
-
-            <div class="flex gap-4">
-                <button id="save" class="mt-4 bg-blue-200 w-[50%] text-white hover:bg-blue-400 py-2 rounded-md">Save</button>
-                <button id="cancel" class="mt-4 bg-red-200 w-[50%] text-white hover:bg-red-400 py-2 rounded-md">Cancel</button>
-            </div>
-
-        </div>
-    
-    </section>
-    <!-- end modal -->
+    </div>
+</section>
+<!-- end Modal -->
 
  
+ 
     <script src="./js/script.js"></script>
- <!-- Start Footer-------------------------------------------------------------------------------------------------------------------------------------- -->
-
-     
-
- <!-- End Footer----------------------------------------------------------------------------------------------------------------------------------- -->
 </body>
 </html>

@@ -2,98 +2,20 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-
 }
 html, body{
     width:100%;
     height:100%;
     font-family: "Poppins", serif;
-
-   
+    background-color: black;
 }
+
 body{
-            color: rgba(43, 41, 41, 0.858);
-        }
-        .badge_gold{
-            display: flex;
-            flex-direction: column;
-            gap :4px;
-            background-size: contain;
-            background-image: url('img/badge_gold.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            width:180px;
-            height:240px;
-         
-        }  
-        .ST_G{
-            grid-column-start: 2;
+    color: rgba(43, 41, 41, 0.858);
+}
+.statistique h5, .statistique h4{
+    font-size: 9px;
+    
+}
+        
 
-        }   
-        .nom{
-            font-weight: 900;
-            font-size : 16px ;
-            text-align: center;  
-        }
-        .statistique{
-            display:flex;
-            font-weight: 700;
-            font-size : 8px ;
-            justify-content: center;
-            gap:8px;
-        }
-
-        .statistique div{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .flag{
-            display: flex;
-            justify-content: center;
-            gap:8px;
-            align-items: center;
-
-        }
-        .flag img{
-            width: 16px;
-            height: 16px;
-        }
-        .photo{
-           /* w-full h-3/5  mx-auto flex  justify-center ;*/
-            display: flex;
-            width: 100%;
-            height:60%;
-            margin: 0 auto;
-            justify-content: center;
-
-        }
-
-         @media(max-width:760px){
-            .badge_gold{
-            width:90px;
-            height:120px;
-            gap:2px ; 
-         
-        } 
-
-            .photo{
-           /* w-full h-3/5  mx-auto flex  justify-center ;*/
-            display: flex;
-            width: 40%;
-            height:30%;
-            margin: 0 auto;
-            justify-content: center;
-
-        }
-        .nom{
-            font-weight: 800;
-            font-size : 12px ;
-            text-align: center;  
-        }
-        .statistique{
-            flex-wrap: wrap;
-            gap:2px;
-            font-size: 6px;
-        }
-         }
