@@ -89,7 +89,7 @@
         <!-- Start Player Cards -->
         <section  id="chosen" class="w-full flex flex-col py-3 gap-4 border border-dashed border-red-500 items-center ">
                     <h1 class=" font-bold border border-dashed border-red-500">Chosen Players</h1>
-                    <div id="player-card" class="bg-red-400 w-full p-1">
+                    <div id="playerCard" class="bg-red-400 w-full p-1">
                         <div class="grid grid-cols-2  border border-dashed border-red-500 flex items-center">
                             <div class="flex justify-center">
                                 <img src="https://cdn.sofifa.net/players/020/801/25_120.png" alt="cristiano ronaldo">
@@ -173,28 +173,40 @@
                 </div>
             </div>
 
+            <!-- Photo -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="photo">Photo:</label>
+                <input type="url" id="photo" name="photo" placeholder="Entrez la photo du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+            </div>
+
             <!-- Nationalité -->
             <div class="flex flex-col gap-1">
                 <label class="font-bold" for="nationalite">Nationalité:</label>
-                <input type="url" id="nationalite" name="nationalité" placeholder="Entrez la nationalité du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                <input type="text" id="nationalite" name="nationalité" placeholder="Entrez la nationalité du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+            </div>
+
+            <!-- Flag -->
+            <div class="flex flex-col gap-1">
+                <label class="font-bold" for="flag">Drapeau:</label>
+                <input type="url" id="flag" name="flag" placeholder="Lien du drapeau du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
             </div>
 
             <!-- Ligue -->
             <div class="flex flex-col gap-1">
-                <label class="font-bold" for="ligue">Ligue:</label>
-                <input type="url" id="ligue" name="ligue" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                <label class="font-bold" for="logo">Logo:</label>
+                <input type="url" id="logo" name="logo" placeholder="Lien du logo de la ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
             </div>
 
             <!-- Club -->
             <div class="flex flex-col gap-1">
                 <label class="font-bold" for="club">Club:</label>
-                <input type="url" id="club" name="club" placeholder="Lien du photo de ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                <input type="url" id="club" name="club" placeholder="Lien du photo de club" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
             </div>
         </form>
 
         <!-- Action buttons -->
         <div class="flex gap-4 mt-4">
-            <button id="save" class="bg-blue-200 w-[50%] text-white hover:bg-blue-400 py-2 rounded-md">Save</button>
+            <button id="save" type="submit" class="bg-blue-200 w-[50%] text-white hover:bg-blue-400 py-2 rounded-md">Save</button>
             <button id="cancel" class="bg-red-200 w-[50%] text-white hover:bg-red-400 py-2 rounded-md">Cancel</button>
         </div>
     </div>
