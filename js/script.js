@@ -417,7 +417,7 @@ let players = [
     }
 ]
 //tableaux des joueurs////////////////////////////////////
-  
+afficher();
   
 //2. Manipulation du Modal////////////////////////////////////
 const add = document.getElementById("new");
@@ -557,6 +557,8 @@ function supprimer(){
     });
 
 };
+
+
 
 // // Afficher les joueurs////////////////
 // function afficher(){
