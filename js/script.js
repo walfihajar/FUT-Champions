@@ -650,6 +650,8 @@ function afficherSelect (button, position) {
         }
         if(player){
              getCard.innerHTML = afficherJoueurTerrain(player);
+             //ajoout dabs array stade 
+             //supprime tab reserve 
         }else{
             alert("this player is not found");
         }
@@ -657,7 +659,7 @@ function afficherSelect (button, position) {
     })
     
 
-
+    filtrer();
     switch (position) {
         case "ST":
             joueursFiltres = filtrer ("ST");
@@ -706,16 +708,16 @@ function afficherJoueurTerrain(player){
                             <div class="font-bold text-xs">${player.rating}</div>
                             <div class="font-semibold text-[0.5rem]">${player.position}</div>
                         </div>
-                        <div class="absolute top-[64%] text-center">
+                        <div class="absolute top-[66%] text-center">
                             <div class="font-bold text-[0.5rem]">${player.name}</div>
-                            <div class="flex font-semibold text-[0.3rem] gap-1.5">
+                            <div class="flex font-semibold text-[0.3rem] justify-around gap-[2px]">
                                 <div class="flex flex-col">
                                     <span>PAC</span>
                                     <span>${player.pace}</span>
                                 </div>
                                 <div class="flex flex-col">
                                     <span>SHO</span>
-                                    <span>${player.shoting}</span>
+                                    <span>${player.shooting}</span>
                                 </div>
                                 <div class="flex flex-col">
                                     <span>PAS</span>
@@ -735,7 +737,7 @@ function afficherJoueurTerrain(player){
                                 </div>
                             </div>
 
-                            <div class="absolute flex gap-1 left-[37%] mt-1 items-center">
+                            <div class="absolute flex gap-1 top-[46%] left-[22%]  mt-1 items-center">
                                 <div ><img src="${player.flag}" class="object-contain" width="10" height="10" alt=""></div>
                                 <div><img src="${player.club}" class="object-contain" width="10" height="10" alt=""></div>
                                 <div><img src="${player.logo}" class="object-contain" width="10" height="10" alt=""></div>
@@ -747,3 +749,4 @@ function afficherJoueurTerrain(player){
 }
 
 
+ù
