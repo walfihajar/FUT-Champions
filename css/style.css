@@ -7,14 +7,13 @@ html, body{
     width:100%;
     height:100%;
     font-family: "Poppins", serif;
+    background-color: rgb(35, 33, 33);
 }
 
 body{
-    color: rgba(43, 41, 41, 0.858);
+    color: white;
 }
 .statistique h5, .statistique h4{
-    font-size: 9px;
-    
+    font-size: 9px; 
 }
-        
 

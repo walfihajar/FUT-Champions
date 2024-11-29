@@ -153,12 +153,12 @@ let players = [
     "club": "Atletico Madrid",
     "logo": "https://cdn.sofifa.net/meta/team/7980/120.png",
     "rating": 91,
-    "diving": 89,
-    "handling": 90,
-    "kicking": 78,
-    "reflexes": 92,
-    "speed": 50,
-    "positioning": 88
+    "pace": 89,
+    "shooting": 90,
+    "passing": 78,
+    "dribbling": 92,
+    "defending": 50,
+    "physical": 88
     },
     {
     "name": "Luka Modrić",
@@ -281,12 +281,12 @@ let players = [
     "club": "Al-Hilal",
     "logo": "https://cdn.sofifa.net/meta/team/7011/120.png",
     "rating": 84,
-    "diving": 81,
-    "handling": 82,
-    "kicking": 77,
-    "reflexes": 86,
-    "speed": 38,
-    "positioning": 83
+    "pace": 81,
+    "shooting": 82,
+    "passing": 77,
+    "dribbling": 86,
+    "defending": 38,
+    "physical": 83
     },
     {
     "name": "Bruno Fernandes",
@@ -408,12 +408,12 @@ let players = [
     "club": "Paris Saint-Germain",
     "logo": "https://cdn.sofifa.net/meta/team/591/120.png",
     "rating": 89,
-    "diving": 88,
-    "handling": 84,
-    "kicking": 75,
-    "reflexes": 90,
-    "speed": 50,
-    "positioning": 85
+    "pace": 88,
+    "shooting": 84,
+    "passing": 75,
+    "dribbling": 90,
+    "defending": 50,
+    "physical": 85
     }
 ]
 //tableaux des joueurs////////////////////////////////////
@@ -452,24 +452,30 @@ save.addEventListener("click", (e) => {
     const flag = document.getElementById("flag").value.trim();
     const logo = document.getElementById("logo").value.trim();
     const club = document.getElementById("club").value.trim();
+    
+
 
     let error = '';
-    if (nom == '') {
+    if (nom == '' || !/^[A-Za-z]+$/.test(nom)) {
         error = 'Veuillez entrer le nom du joueur';
-    } else if (note == '' || note > 100 || note < 0) {
+    } else if (note == '' || isNaN(note) || note > 100 || note < 0) {
         error = 'Veuillez entrer une note valide (note entre 0 et 100)';
-    } else if (pac == '' || pac > 100 || pac < 0) {
-        error = 'Veuillez entrer une vitesse valide (PAC entre 0 et 100)';
-    } else if (sho == '' || sho > 100 || sho < 0) {
-        error = 'Veuillez entrer une précision de tir valide (SHO entre 0 et 100)';
-    } else if (pas == '' || pas > 100 || pas < 0) {
-        error = 'Veuillez entrer une passe valide (PAS entre 0 et 100)';
-    } else if (dri == '' || dri > 100 || dri < 0) {
-        error = 'Veuillez entrer un dribble valide (DRI entre 0 et 100)';
-    } else if (def == '' || def > 100 || def < 0) {
-        error = 'Veuillez entrer une défense valide (DEF entre 0 et 100)';
-    } else if (phy == '' || phy > 100 || phy < 0) {
-        error = 'Veuillez entrer une force physique valide (PHY entre 0 et 100)';
+    } else if (pac == ''|| isNaN(pac) || pac > 100 || pac < 0) {
+        error = 'Veuillez entrer un nombre valide (entre 0 et 100)';
+    } else if (sho == '' || isNaN(sho) || sho > 100 || sho < 0) {
+        error = 'Veuillez entrer un nombre valide (entre 0 et 100)';
+    } else if (pas == '' || isNaN(pas) || pas > 100 || pas < 0) {
+        error = 'Veuillez entrer un nombre valide (entre 0 et 100)';
+    } else if (dri == '' || isNaN(dri) || dri > 100 || dri < 0) {
+        error = 'Veuillez entrer un nombre valide (entre 0 et 100)';
+    } else if (def == '' || isNaN(def) || def > 100 || def < 0) {
+        error = 'Veuillez entrer un nombre valide (entre 0 et 100)';
+    }else if (!photo) {
+        error = "Veuillez entrer une URL de photo valide";
+    } else if (!flag) {
+        error = "Veuillez entrer une URL de drapeau valide";
+    } else if (!club) {
+        error = "Veuillez entrer une URL pour le club valide";
     }
 
     if (error) {
@@ -477,7 +483,7 @@ save.addEventListener("click", (e) => {
         return;
     }
 
-    let anotherPlayer ={ name: nom, photo:photo , position: position, nationality: nationalite , flag : flag , club : club , logo : logo , rating:note, pace:pac, shooting:sho, passing:pas , dribbling:dri , defending:def , physical:phy }; 
+    let anotherPlayer ={ name: nom, photo:photo , position: position, nationality: nationalite , flag : flag , club : club , logo : logo , rating:note, pace:pac, shooting:sho, passing:pas , dribbling:dri , defending:def , physical:phy}; 
     if (currentIndex === null){
         players.push(anotherPlayer);
         alert("Le joueur est ajouté avec succès !");
@@ -492,10 +498,49 @@ save.addEventListener("click", (e) => {
     afficher();
 });
 
+const positionSelect = document.getElementById("position");
+
+const Labels = {
+    pac: document.querySelector('label[for="pac"]'),
+    sho: document.querySelector('label[for="sho"]'),
+    pas: document.querySelector('label[for="pas"]'),
+    dri: document.querySelector('label[for="dri"]'),
+    def: document.querySelector('label[for="def"]'),
+    phy: document.querySelector('label[for="phy"]'),
+};
+
+
+function changerStatistiques(position) {
+    if (position === "GK") { 
+        Labels.pac.textContent = "DIV"; 
+        Labels.sho.textContent = "HAN"; 
+        Labels.pas.textContent = "KIC"; 
+        Labels.dri.textContent = "REF"; 
+        Labels.def.textContent = "SPD"; 
+        Labels.phy.textContent = "POS"; 
+    } else { 
+        Labels.pac.textContent = "PAC"; 
+        Labels.sho.textContent = "SHO"; 
+        Labels.pas.textContent = "PAS";
+        Labels.dri.textContent = "DRI";
+        Labels.def.textContent = "DEF"; 
+        Labels.phy.textContent = "PHY";
+    }
+}
+changerStatistiques(positionSelect.value);
+
+
+positionSelect.addEventListener("change", (event) => {
+    const selectedPosition = event.target.value;
+    changerStatistiques(selectedPosition);
+});
+
+
 function afficher() {
     const chosen = document.getElementById("chosen");
     chosen.innerHTML = '';
     players.forEach((player, index) => {
+        
         const playerCard = document.createElement('div');
         playerCard.classList.add('grid', 'grid-cols-2', 'border', 'border-dashed', 'border-red-500' ,'flex', 'items-center');
         playerCard.innerHTML = `
@@ -558,57 +603,147 @@ function supprimer(){
 
 };
 
+function filtrer(position){
+    return players.filter(player => player.position == position);
+};
+
+document.querySelectorAll('.position-button').forEach(button => {
+    button.addEventListener('click',(event) => {
+        const position = button.getAttribute('data-position');
+        afficherSelect(button, position);
+    });
+});
+
+function afficherSelect (button, position) {
+    const joueursFiltres = filtrer(position);
+
+    const oldSelect = button.parentElement.querySelector('select');
+    if (oldSelect) oldSelect.remove();
+    
+    // Création de la liste déroulante
+    const select = document.createElement('select');
+    select.classList.add('border', 'rounded', 'p-2', 'w-full','selectPlayer');
+
+    const defaultOption = document.createElement('option');
+    defaultOption.value = "";
+    defaultOption.textContent = "Sélectionner un joueur";
+    select.appendChild(defaultOption);
+
+    joueursFiltres.forEach(player => {
+        const option = document.createElement('option');
+        option.value = player.name;
+        option.textContent = player.name;
+        select.appendChild(option);
+    });
+
+    let getCard = button.parentElement;
+    getCard.appendChild(select);
+    
+    select.addEventListener('change', () =>{
+        let player;
+        let selectedPlayer = select.value;
+        
+        for(let i = 0; i < players.length; i++){
+            if(players[i].name == selectedPlayer){
+                player = players[i];
+            }
+        }
+        if(player){
+             getCard.innerHTML = afficherJoueurTerrain(player);
+        }else{
+            alert("this player is not found");
+        }
+        
+    })
+    
 
 
-// // Afficher les joueurs////////////////
-// function afficher(){
-//     const chosen = document.getElementById('chosen');
-//     chosen.innerHTML = ''; 
-//     players.forEach((player, index)=> {
-//         const playerCard = document.createElement('div');
-//         playerCard.className = 'playerCard';
-//         playerCard.innerHTML = `
-//                                 <img src ="${player.photo}" >
-//                                 <h3>${player.name}"</h3>
-//                                 <p>${player.position}</p>
-//                                 <button onclick="modifierJoueur(${index})">Modifier</button>
-//                                 <button onclick="supprimerJoueur(${index})">Supprimer</button>
-//                              ;`
-//         chosen.appendChild(playerCard);
-//         console.log(player)
-//     });
-// }
+    switch (position) {
+        case "ST":
+            joueursFiltres = filtrer ("ST");
+        break;
+        case "CM":
+            joueursFiltres = filtrer ("CM");
+        break;
+        case "RM" :
+            joueursFiltres = filtrer ("RM");
+        break;
+        case "CB" :
+            joueursFiltres = filtrer ("CB");
+        break;
+        case "LB" :
+            joueursFiltres = filtrer ("LB");
+        break;
+        case "RB" :
+            joueursFiltres = filtrer ("RB");
+        break;
+        case "GK" :
+            joueursFiltres = filtrer ("GK");
+        break;
+        default:
+            alert("Position inconnue!");
+        return;
+    }
+
+    
+
+    joueursFiltres.forEach(player => {
+        let option = document.createElement("option");
+        option.value = player.id;
+        option.textContent = player.name;
+        select.appendChild(option);
+   })
+};
+
+function afficherJoueurTerrain(player){
+    return `
+                <div class="relative flex justify-center items-center text-black">
+
+                    <img src="img/yellow-card.png" class="object-contain" height="170" width="120" alt="">
+                    <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+                        <img src="${player.photo}" class="object-contain mb-4" height="60" width="60">
+                        <div class="absolute left-[16.3%] top-[20%] text-center">
+                            <div class="font-bold text-xs">${player.rating}</div>
+                            <div class="font-semibold text-[0.5rem]">${player.position}</div>
+                        </div>
+                        <div class="absolute top-[64%] text-center">
+                            <div class="font-bold text-[0.5rem]">${player.name}</div>
+                            <div class="flex font-semibold text-[0.3rem] gap-1.5">
+                                <div class="flex flex-col">
+                                    <span>PAC</span>
+                                    <span>${player.pace}</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>SHO</span>
+                                    <span>${player.shoting}</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>PAS</span>
+                                    <span>${player.passing}</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>DRI</span>
+                                    <span>${player.dribbling}</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>DEF</span>
+                                    <span>${player.defending}</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>PHY</span>
+                                    <span>${player.physical}</span>
+                                </div>
+                            </div>
+
+                            <div class="absolute flex gap-1 left-[37%] mt-1 items-center">
+                                <div ><img src="${player.flag}" class="object-contain" width="10" height="10" alt=""></div>
+                                <div><img src="${player.club}" class="object-contain" width="10" height="10" alt=""></div>
+                                <div><img src="${player.logo}" class="object-contain" width="10" height="10" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+
+}
 
 
-// // Afficher les joueurs est terminée//////////////
-
-// // Modification des joueurs//////////////////////
-// function remplirform(index){
-//     let player = players[index];
-
-//     document.getElementById('nom').value = player.name; 
-//     document.getElementById('position').value = player.position;
-//     document.getElementById('note').value = player.rating;
-//     document.getElementById('pac').value = player.pace;
-//     document.getElementById('sho').value = player.shooting;
-//     document.getElementById('pas').value = player.passing;
-//     document.getElementById('dri').value = player.dribbling;
-//     document.getElementById('def').value = player.defending;
-//     document.getElementById('phy').value = player.physical;
-//     document.getElementById('nationalite').value = player.nationality;
-//     document.getElementById('flag').value = player.flag;
-//     document.getElementById('club').value = player.club;
-//     document.getElementById('photo').value = player.photo;
-
-//     players.splice(index, 1);
-
-//     afficher();
-// }
-
-// //Suppression des joueurs/////////////////////
-// function suppression(index) {
-//     players.splice(index, 1);
-//     affichage();
-// }
-
-// console.log(players[0].name);
