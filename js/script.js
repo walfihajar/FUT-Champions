@@ -560,7 +560,6 @@ function afficher() {
     });
     modifier();
     supprimer();
-    console.log(chosen);
 };
 
 function modifier() {
@@ -698,55 +697,49 @@ function afficherSelect (button, position) {
 };
 
 function afficherJoueurTerrain(player){
+    const statsLabels = player.position === "GK" 
+        ? { pac: "DIV", sho: "HAN", pas: "KIC", dri: "REF", def: "SPD", phy: "POS" }
+        : { pac: "PAC", sho: "SHO", pas: "PAS", dri: "DRI", def: "DEF", phy: "PHY" };
     return `
-                <div class="relative flex justify-center items-center text-black">
+    <div class="h-[70%] w-[70%] text-black">
+        <div class="flex items-center justify-center"><img src="${player.photo}" class="object-contain" height="70" width="60"></div>
+        <h6 class="nom text-xs text-center">${player.name}</h6>
+        <!-- Statistiques -->
+        <div class="statistique grid grid-cols-3 border gap-1 border-dashed w-full border-red-700">
+            <div class="flex gap-1 p-1">
+                <h4 class="test-sm">${statsLabels.pac}</h4> 
+                <h4 class="text-xs font-bold">${player.pace}</h4>
+            </div>
+            <div class="flex gap-1" >
+                <h4 class="test-sm">${statsLabels.sho}</h4> 
+                <h4 class="text-xs">${player.shooting}</h4>
+            </div>
+            <div class="flex gap-1" >
+                <h4 class="test-sm">${statsLabels.pas}</h4> 
+                <h4 class="text-xs">${player.passing}</h4>
+            </div>
+            <div class="flex gap-1" >
+                <h4 class="test-sm">${statsLabels.dri}</h4> 
+                <h4 class="text-xs">${player.dribbling}</h4>
+            </div>
+            <div class="flex gap-1" >
+                <h4 class="test-sm">${statsLabels.def}</h4> 
+                <h4 class="text-xs">${player.defending}</h4>
+            </div>
+            <div class="flex gap-1" >
+                <h4 class="test-sm">${statsLabels.phy}</h4> 
+                <h4 class="text-xs">${player.physical}</h4>
+            </div>
+        </div>
 
-                    <img src="img/yellow-card.png" class="object-contain" height="170" width="120" alt="">
-                    <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
-                        <img src="${player.photo}" class="object-contain mb-4" height="60" width="60">
-                        <div class="absolute left-[16.3%] top-[20%] text-center">
-                            <div class="font-bold text-xs">${player.rating}</div>
-                            <div class="font-semibold text-[0.5rem]">${player.position}</div>
-                        </div>
-                        <div class="absolute top-[66%] text-center">
-                            <div class="font-bold text-[0.5rem]">${player.name}</div>
-                            <div class="flex font-semibold text-[0.3rem] justify-around gap-[2px]">
-                                <div class="flex flex-col">
-                                    <span>PAC</span>
-                                    <span>${player.pace}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>SHO</span>
-                                    <span>${player.shooting}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>PAS</span>
-                                    <span>${player.passing}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>DRI</span>
-                                    <span>${player.dribbling}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>DEF</span>
-                                    <span>${player.defending}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>PHY</span>
-                                    <span>${player.physical}</span>
-                                </div>
-                            </div>
-
-                            <div class="absolute flex gap-1 top-[46%] left-[22%]  mt-1 items-center">
-                                <div ><img src="${player.flag}" class="object-contain" width="10" height="10" alt=""></div>
-                                <div><img src="${player.club}" class="object-contain" width="10" height="10" alt=""></div>
-                                <div><img src="${player.logo}" class="object-contain" width="10" height="10" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
+        <!-- Flag / club / Nationality -->
+        <div class="flag flex justify-center gap-1 align-middle">
+            <img src="${player.flag}" class="w-[14px] h-[10px]" alt="nationalite">
+            <img src="${player.club}" class="w-[16px] h-[16px]"  alt="flag">
+            <img src="${player.logo}" class="w-[14px] h-[12px]"  alt="logo">
+        </div>
+    </div>`;
 
 }
 
 
-ù
