@@ -1,4 +1,4 @@
-// 1. ================ tableaux des joueurs ===================
+// 1. tableaux des joueurs////////////////////////////////////
 let players = [
     {
     "name": "Lionel Messi",
@@ -416,10 +416,10 @@ let players = [
     "physical": 85
     }
 ]
-// 1. ================ tableaux des joueurs ===================
+//tableaux des joueurs////////////////////////////////////
 afficher();
-
-// 2. ================ Start Manipulation de Modal ==================
+  
+//2. Manipulation du Modal////////////////////////////////////
 const add = document.getElementById("new");
 const modal = document.getElementById("modal");
 const cancel = document.getElementById("cancel");
@@ -434,6 +434,7 @@ add.addEventListener("click", () => {
 cancel.addEventListener("click", () => {
     modal.classList.add('hidden');
 });
+//la fonction ajouter un joueur est terminé 
 save.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -452,7 +453,8 @@ save.addEventListener("click", (e) => {
     const logo = document.getElementById("logo").value.trim();
     const club = document.getElementById("club").value.trim();
     
-    // 3. ================ Verification des champs ==================
+
+
     let error = '';
     if (nom == '' || !/^[A-Za-z]+$/.test(nom)) {
         error = 'Veuillez entrer le nom du joueur';
@@ -480,9 +482,6 @@ save.addEventListener("click", (e) => {
         alert(error);
         return;
     }
-    // 3. ================ end Verification des champs ==================
-
-    // 4. ================ Ajouter un joueur a la liste des reserve ==================
 
     let anotherPlayer ={ name: nom, photo:photo , position: position, nationality: nationalite , flag : flag , club : club , logo : logo , rating:note, pace:pac, shooting:sho, passing:pas , dribbling:dri , defending:def , physical:phy}; 
     if (currentIndex === null){
@@ -497,17 +496,10 @@ save.addEventListener("click", (e) => {
     console.log(players); 
     currentIndex = null;
     afficher();
-    // 4. ================ End Ajouter un joueur a la liste des reserve ==================
-
 });
 
-
-// 2. ================ End Manipulation de Modal ==================
-
-
-// 5. ================ selon la position, on doit changer les labels des statisti des joueurs ==================
-
 const positionSelect = document.getElementById("position");
+
 const Labels = {
     pac: document.querySelector('label[for="pac"]'),
     sho: document.querySelector('label[for="sho"]'),
@@ -516,6 +508,8 @@ const Labels = {
     def: document.querySelector('label[for="def"]'),
     phy: document.querySelector('label[for="phy"]'),
 };
+
+
 function changerStatistiques(position) {
     if (position === "GK") { 
         Labels.pac.textContent = "DIV"; 
@@ -534,6 +528,8 @@ function changerStatistiques(position) {
     }
 }
 changerStatistiques(positionSelect.value);
+
+
 positionSelect.addEventListener("change", (event) => {
     const selectedPosition = event.target.value;
     changerStatistiques(selectedPosition);
@@ -546,29 +542,25 @@ function afficher() {
     players.forEach((player, index) => {
         
         const playerCard = document.createElement('div');
-        playerCard.classList.add('w-full');
-        playerCard.innerHTML = `<div class="informations grid grid-cols-2 items-center h-[70px] justify-center">
-                                    <div class="flex justify-center">
-                                       <img  src="${player.photo}" alt="Photo de ${player.name}  height="80" width="70">
-                                    </div>
-                                    <div class="text-center text-xs p-1">
-                                       <p>${player.name}</p>
-                                       <p class="text-[#c9a04a] font-bold">${player.position}</p>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="flex justify-around gap-1 p-2">
-                                    <button class="delete w-full bg-red-500 text-white text-xs px-2 py-1 rounded" data-index="${index}">Supprimer</button>
-                                    <button class="edit   w-full bg-blue-500 text-white text-xs px-2 py-1 rounded" data-index="${index}">Modifier</button>
-                                </div>
-                                `;
+        playerCard.classList.add('grid', 'grid-cols-2', 'border', 'border-dashed', 'border-red-500' ,'flex', 'items-center');
+        playerCard.innerHTML = `
+                            <div class="flex justify-center">
+                                <img  src="${player.photo}" alt="Photo de ${player.name}">
+                            </div>
+                            <div class="text-center">
+                                <p>${player.name}</p>
+                                <p>Position: ${player.position}</p>
+                            </div>
+                            <div class="flex justify-around w-full">
+                                <button class="delete" data-index="${index}">Supprimer</button>
+                                <button class="edit" data-index="${index}">Modifier</button>
+                            </div>
+                    `;
         chosen.appendChild(playerCard);
     });
     modifier();
     supprimer();
 };
-
 
 function modifier() {
     const editBtn = document.querySelectorAll('.edit');
@@ -640,6 +632,7 @@ function afficherSelect(button, position) {
     // Ajouter une option par défaut
     const defaultOption = document.createElement("option");
     defaultOption.value = "";
+    defaultOption.textContent = "Sélectionner un joueur";
     select.appendChild(defaultOption);
 
     joueursFiltres.forEach((player, index) => {
@@ -672,7 +665,6 @@ function afficherSelect(button, position) {
 
             // Retirer le joueur de la liste principale
             players = players.filter((p) => p !== player);
-            
 
             // Mettre à jour l'affichage global
             afficher();
@@ -685,7 +677,8 @@ function afficherSelect(button, position) {
     };
 }
 
-function afficherJoueurTerrain(player, index) {
+
+function afficherJoueurTerrain(player){
     let statsLabels;
 
     if (player.position === "GK") {
@@ -693,60 +686,56 @@ function afficherJoueurTerrain(player, index) {
     } else {
         statsLabels = { pac: "PAC", sho: "SHO", pas: "PAS", dri: "DRI", def: "DEF", phy: "PHY" };
     }
-
     return `
-            <div class="h-[70%] w-[70%] text-black player-card group relative">
+   <div class="h-[70%] w-[70%] text-black player-card group relative">
+        <!-- Player Photo and Name -->
+        <div class="flex items-center justify-center">
+            <img src="${player.photo}" class="object-contain" height="70" width="60" alt="${player.name}">
+        </div>
+        <p class="nom text-xs text-center">${player.name}</p>
 
-                <!-- Player Photo and Name -->
-                <div class="flex items-center justify-center">
-                    <img src="${player.photo}" class="object-contain" height="70" width="60" alt="${player.name}">
-                </div>
-                <p class="nom text-xs text-center">${player.name}</p>
-
-                <!-- Statistiques -->
-                <div class="statistique grid grid-cols-3 border place-items-center border-dashed w-full border-red-700">
-                    <div class="flex flex-col">
-                        <h4 class="test-sm">${statsLabels.pac}</h4>
-                        <h4 class="text-xs">${player.pace}</h4>
-                    </div>
-                    <div class="flex flex-col">
-                        <h4 class="test-sm">${statsLabels.sho}</h4>
-                        <h4 class="text-xs">${player.shooting}</h4>
-                    </div>
-                    <div class="flex flex-col">
-                        <h4 class="test-sm">${statsLabels.pas}</h4>
-                        <h4 class="text-xs">${player.passing}</h4>
-                    </div>
-                    <div class="flex flex-col">
-                        <h4 class="test-sm">${statsLabels.dri}</h4>
-                        <h4 class="text-xs">${player.dribbling}</h4>
-                    </div>
-                    <div class="flex flex-col">
-                        <h4 class="test-sm">${statsLabels.def}</h4>
-                        <h4 class="text-xs">${player.defending}</h4>
-                    </div>
-                    <div class="flex flex-col">
-                        <h4 class="test-sm">${statsLabels.phy}</h4>
-                        <h4 class="text-xs">${player.physical}</h4>
-                    </div>
-                </div>
-
-                <!-- Flag / Club / Nationality -->
-                <div class="flag flex justify-center gap-1 align-middle">
-                    <img src="${player.flag}" class="w-[14px] h-[10px]" alt="nationalite">
-                    <img src="${player.logo}" class="w-[14px] h-[12px]" alt="logo">
-                </div>
-
-                <!-- Action Buttons (hidden by default, visible on hover) -->
-                <div class="actions absolute top-0 left-0 w-full h-full flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button onclick="afficherSelect(this, '${player.position}')" class="replace-button bg-blue-500 text-white text-xs px-2 py-1 rounded" data-index="${player.id}">Remplacer</button>
-                </div>
+        <!-- Statistiques -->
+        <div class="statistique grid grid-cols-3 border place-items-center border-dashed w-full border-red-700">
+            <div class="flex flex-col">
+                <h4 class="test-sm">${statsLabels.pac}</h4>
+                <h4 class="text-xs">${player.pace}</h4>
             </div>
-            `;
+            <div class="flex flex-col">
+                <h4 class="test-sm">${statsLabels.sho}</h4>
+                <h4 class="text-xs">${player.shooting}</h4>
+            </div>
+            <div class="flex flex-col">
+                <h4 class="test-sm">${statsLabels.pas}</h4>
+                <h4 class="text-xs">${player.passing}</h4>
+            </div>
+            <div class="flex flex-col">
+                <h4 class="test-sm">${statsLabels.dri}</h4>
+                <h4 class="text-xs">${player.dribbling}</h4>
+            </div>
+            <div class="flex flex-col">
+                <h4 class="test-sm">${statsLabels.def}</h4>
+                <h4 class="text-xs">${player.defending}</h4>
+            </div>
+            <div class="flex flex-col">
+                <h4 class="test-sm">${statsLabels.phy}</h4>
+                <h4 class="text-xs">${player.physical}</h4>
+            </div>
+        </div>
+
+        <!-- Flag / Club / Nationality -->
+        <div class="flag flex justify-center gap-1 align-middle">
+            <img src="${player.flag}" class="w-[14px] h-[10px]" alt="nationalite">
+            <img src="${player.club}" class="w-[16px] h-[16px]" alt="flag">
+            <img src="${player.logo}" class="w-[14px] h-[12px]" alt="logo">
+        </div>
+
+        <!-- Action Buttons (hidden by default, visible on hover) -->
+        <div class="actions absolute top-0 left-0 w-full h-full flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <button class="replace-button bg-blue-500 text-white text-xs px-2 py-1 rounded" data-player-id="${player.id}">Remplacer</button>
+            <button class="delete-button bg-red-500 text-white text-xs px-2 py-1 rounded" data-player-id="${player.id}">Supprimer</button>
+        </div>
+    </div> `;
+
 }
-
-
-
-
 
 

@@ -13,29 +13,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
-<body class="flex flex-col gap-4">
+<body class="flex flex-col gap-10 ">
 
 
     <!-- Start Header -------------------------------------------------------------------->
-    <div class="title bg-black flex items-center justify-evenly gap-1 h-16 p-2">
+    <div class="title bg-black flex items-center justify-between  p-4 gap-1 h-16 p-2">
         <img class="w-16" src="./img/logo.png">
-        <ul class="flex gap-10">
-            <a href="#" class="hover:text-purple-400"><h5 class="font-bold">Home</h5></a>
-            <a href="#" class="hover:text-purple-400" ><h5 class="font-bold">About</h5></a>
-        </ul>
-        <button id="new" type="button" class="focus:outline-none bg-blue-200 px-4 py-3 rounded-full flex gap-4 hover:bg-white hover:text-blue-800"><span class="font-bold">New</span></button>
+        <div class="flex gap-4 items-center text-[#c9a04a] font-bold">
+            <a href="#" >Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <button id="new" type="button" class="focus:outline-none bg-yellow-300 px-2 py-1 rounded flex hover:bg-black hover:text-yellow-500 text-black"><span class="font-bold">New</span></button>
+
     </div>
     <!-- End Header -->
 
     <!-- Everything else in the middle between header and footer -->
-    <section class="grid grid-cols-1 md:grid-cols-[70%_30%] justify-around items-center">
+    <section class="grid grid-cols-1 md:grid-cols-[70%_20%] gap-4 justify-around items-center">
 
         <!-- Terrain -->
-        <section  class="w-[100%]  md:h-[150vh] bg-center bg-[length:100%_100%] bg-no-repeat  bg-[url('img/field.jpg')] grid grid-cols-5 grid-rows-3" >
+        <section  class="w-[100%]  md:h-[150vh] bg-center md:bg-[length:100%_100%] bg-no-repeat border border-solid border-[#c9a04a] border-[2px]  bg-[url('img/stadium_background.webp')] grid grid-cols-5 grid-rows-3" >
 
             <div></div>
 
-            <div class="border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class=" flex gap-4 items-center justify-center  ">
                 <!-- card of player1 -->
                 <div class="badge_gold flex flex-col justify-center items-center  bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="ST"><img class="w-4" src="./img/plus.png"></button>
@@ -44,7 +46,7 @@
 
             <div></div>
 
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player2 -->
                 <div class="badge_gold flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="ST"><img class="w-4" src="./img/plus.png"></button>
@@ -53,14 +55,14 @@
 
             <div></div>
 
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player3 -->
                 <div class="badge_gold self-start flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="RM"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>  
 
-            <div class="last3 border self-end border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3   flex gap-4 items-center justify-center  ">
                 <!-- card of player4 -->
                 <div class="badge_gold self-end flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="CM"><img class="w-4" src="./img/plus.png"></button>
@@ -69,14 +71,14 @@
 
             <div></div>
 
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player5 -->
                 <div class="badge_gold self-end flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="CM"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>  
 
-            <div class="last3 self-start border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3 self-start  flex gap-4 items-center justify-center  ">
                 <!-- card of player6 -->
                 <div class="badge_gold flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="RM"><img class="w-4" src="./img/plus.png"></button>
@@ -84,14 +86,14 @@
             </div>  
 
             <!-- ////////////////////// -->
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player7 -->
                 <div class="badge_gold self-start flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="LB"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>  
 
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player8 -->
                 <div class="badge_gold self-end flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="CB"><img class="w-4" src="./img/plus.png"></button>
@@ -100,14 +102,14 @@
 
             <div></div>
 
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player9 -->
                 <div class="badge_gold self-end flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="CB"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>  
 
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player10 -->
                 <div class="badge_gold self-start flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="RB"><img class="w-4" src="./img/plus.png"></button>
@@ -118,7 +120,7 @@
 
             <div></div>
 
-            <div class="last3 border border-dashed border-blue-700 flex gap-4 items-center justify-center  ">
+            <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player11 -->
                 <div class="badge_gold flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
                     <button class="position-button" data-position="GK"><img class="w-4" src="./img/plus.png"></button>
@@ -132,121 +134,151 @@
         </section> 
         <!-- End terrain -->
 
+        <div id="select-modal" class="hidden fixed inset-0 bg-black  bg-opacity-30 flex items-center text-black justify-center">
+            <div class="p-4 rounded shadow-lg bg-black bg-opacity-70">
+                <h3 class="text-center text-white mb-4">Sélectionner un joueur</h3>
+                <select id="player-select" class="p-2 w-full border border-[#c9a04a] rounded-md focus:outline-none focus:ring focus:ring-[#c9a04a] "></select>
+                <div class="mt-4 grid grid-cols-2 justify-end w-full gap-2">
+                    <button id="cancel-select" class="bg-red-500 text-white px-4 py-2 rounded">Annuler</button>
+                    <button id="confirm-select" class="bg-blue-500 text-white px-4 py-2 rounded">Confirmer</button>
+                </div>
+            </div>
+        </div>
+        
+
 
         <!-- Start Player Cards -->
-        <section  id="chosen" class="w-full h-screen overflow-auto flex flex-col py-3 gap-4 border border-dashed border-red-500 self-center items-center ">
+        <section  id="chosen" class="w-[60%] m-auto md:w-full h-screen overflow-auto flex flex-col gap-1 border border-solid border-[2px] border-[#c9a04a] py-1 self-center items-center ">
         </section>
         <!-- End Player Cards -->
 
 
         <!-- start Modal -->
-        <section id="modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center">
+        <section id="modal" class="hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
             <!-- Modal content -->
-            <div class="bg-black p-6 md:h-[50%] max-w-lg w-[70%] rounded-lg shadow-lg overflow-auto">
+            <div class=" p-6 h-[30%] w-[90%] md:h-[50%] bg-black  bg-opacity-70 md:w-[25%] rounded-lg shadow-lg  border border-solid border-[2px] border-[#c9a04a]  overflow-auto">
                 
                 <!-- Modal form content -->
+
                 <form id="form" class="flex flex-col gap-1">
-                    <!-- Nom joueur -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="nom">Nom du joueur:</label>
-                        <input type="text" id="nom" name="nom" placeholder="Entrez le nom de joueur" class="bg-gray-50  border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                    <!-- Nom et position -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- NOM DU JOUEUR -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="nom">Nom du joueur:</label>
+                            <input type="text" id="nom" name="nom" placeholder="Entrez le nom de joueur" class="bg-gray-50  border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                        </div>
+
+                        <!-- POSITION -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="position">Position:</label>
+                            <select id="position" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                                <option value="ST">Attaquant (ST): Gauche</option>
+                                <option value="ST">Attaquant (ST): Droit</option>
+                                <option value="RM">Milieu Droit (RM)</option>
+                                <option value="LM">Milieu Gauche (LM)</option>
+                                <option value="CM">Milieu central (CM) : Gauche</option>
+                                <option value="CM">Milieu central (CM) : Droit</option>
+                                <option value="CB">Defenseur central (CB) : Gauche</option>
+                                <option value="CB">Defenseur central (CB) : Droit</option>
+                                <option value="LB">Latéral gauche (LB)</option>
+                                <option value="RB">Latéral droit (RB)</option>
+                                <option value="GK">Gardien de But (GK)</option>
+
+                            </select>
+                        </div>
                     </div>
+                    
+                    <!-- note et club -->
+                    <div class="grid grid-cols-2 gap-4">
+                        
+                        <!-- Note -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="note">Note:</label>
+                            <input type="text" id="note" name="note" placeholder="Entrez la note du joueur" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                        </div>
 
-                    <!-- Position -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="position">Position:</label>
-                        <select id="position" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                            <option value="ST">Attaquant (ST): Gauche</option>
-                            <option value="ST">Attaquant (ST): Droit</option>
-                            <option value="RM">Milieu Droit (RM)</option>
-                            <option value="LM">Milieu Gauche (LM)</option>
-                            <option value="CM">Milieu central (CM) : Gauche</option>
-                            <option value="CM">Milieu central (CM) : Droit</option>
-                            <option value="CB">Defenseur central (CB) : Gauche</option>
-                            <option value="CB">Defenseur central (CB) : Droit</option>
-                            <option value="LB">Latéral gauche (LB)</option>
-                            <option value="RB">Latéral droit (RB)</option>
-                            <option value="GK">Gardien de But (GK)</option>
-
-                        </select>
-                    </div>
-
-                    <!-- Note -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="note">Note:</label>
-                        <input type="text" id="note" name="note" placeholder="Entrez la note du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                        <!-- Club -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="club">Club:</label>
+                            <input type="text" id="club" name="club" placeholder="Lien du photo de club" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                        </div>
                     </div>
                     
                     <!-- Statistiques (PAC, SHO, PAS, DRI, DEF, PHY) -->
                     <div id="statistique" class="flex justify-around gap-1 flex-wrap text-center" >
                         <!-- PAC -->
                         <div class="flex flex-col">
-                            <label class="font-bold" for="pac">PAC:</label>
-                            <input type="text" id="pac" placeholder="PAC" class="bg-gray-50 w-10 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label  for="pac">PAC:</label>
+                            <input type="text" id="pac" placeholder="PAC" class="bg-gray-50 w-16 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
                         </div>
                         <!-- SHO -->
                         <div class="flex flex-col">
-                            <label class="font-bold" for="sho">SHO:</label>
-                            <input type="text" id="sho" placeholder="SHO" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label  for="sho">SHO:</label>
+                            <input type="text" id="sho" placeholder="SHO" class="bg-gray-50 w-16 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
                         </div>
                         <!-- PAS -->
                         <div class="flex flex-col">
-                            <label  class="font-bold" for="pas">PAS:</label>
-                            <input type="text" id="pas" placeholder="PAS" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label   for="pas">PAS:</label>
+                            <input type="text" id="pas" placeholder="PAS" class="bg-gray-50 w-16 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
                         </div>
                         <!-- DRI -->
                         <div class="flex flex-col">
-                            <label class="font-bold" for="dri">DRI:</label>
-                            <input type="text" id="dri" placeholder="DRI" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label  for="dri">DRI:</label>
+                            <input type="text" id="dri" placeholder="DRI" class="bg-gray-50 w-16 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
                         </div>
                         <!-- DEF -->
                         <div class="flex flex-col">
-                            <label class="font-bold" for="def">DEF:</label>
-                            <input type="text" id="def" placeholder="DEF" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label  for="def">DEF:</label>
+                            <input type="text" id="def" placeholder="DEF" class="bg-gray-50 w-16 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
                         </div>
                         <!-- PHY -->
                         <div class="flex flex-col">
-                            <label class="font-bold" for="phy">PHY:</label>
-                            <input type="text" id="phy" placeholder="PHY" class="bg-gray-50 w-16 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                            <label  for="phy">PHY:</label>
+                            <input type="text" id="phy" placeholder="PHY" class="bg-gray-50 w-16 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
                         </div>
                     </div>  
+                     
+                    <!-- photo et nationalité -->
+                    <div class="grid grid-cols-2 gap-4">
 
-                    <!-- Photo -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="photo">Photo:</label>
-                        <input type="text" id="photo" name="photo" placeholder="Entrez la photo du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                        <!-- Photo -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="photo">Photo:</label>
+                            <input type="text" id="photo" name="photo" placeholder="Entrez la photo du joueur" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                        </div>
+
+                        <!-- Nationalité -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="nationalite">Nationalité:</label>
+                            <input type="text" id="nationalite" name="nationalité" placeholder="Entrez la nationalité du joueur" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                        </div>
+
                     </div>
+                    
+                    <!-- flag et ligue -->
+                    <div class="grid grid-cols-2 gap-4">
 
-                    <!-- Nationalité -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="nationalite">Nationalité:</label>
-                        <input type="text" id="nationalite" name="nationalité" placeholder="Entrez la nationalité du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                    </div>
+                        <!-- Flag -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="flag">Drapeau:</label>
+                            <input type="text" id="flag" name="flag" placeholder="Lien du drapeau du joueur" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                        </div>
 
-                    <!-- Flag -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="flag">Drapeau:</label>
-                        <input type="text" id="flag" name="flag" placeholder="Lien du drapeau du joueur" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                    </div>
-
-                    <!-- Ligue -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="logo">Logo:</label>
-                        <input type="text" id="logo" name="logo" placeholder="Lien du logo de la ligue" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
-                    </div>
-
-                    <!-- Club -->
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold" for="club">Club:</label>
-                        <input type="text" id="club" name="club" placeholder="Lien du photo de club" class="bg-gray-50 border border-blue-300 text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-blue-400">
+                        <!-- Ligue -->
+                        <div class="flex flex-col gap-1">
+                            <label  for="logo">Logo:</label>
+                            <input type="text" id="logo" name="logo" placeholder="Lien du logo de la ligue" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
+                        </div>
+                        
                     </div>
 
                 </form>
 
                 <!-- Action buttons -->
                 <div class="flex gap-4 mt-4">
-                    <button id="save" type="submit" class="bg-blue-200 w-[50%] text-white hover:bg-blue-400 py-2 rounded-md">Save</button>
-                    <button id="cancel" class="bg-red-200 w-[50%] text-white hover:bg-red-400 py-2 rounded-md">Cancel</button>
+                    <button id="save" type="submit" class="bg-red-500 text-white px-4 py-2 rounded w-[50%]">Save</button>
+                    <button id="cancel" class="bg-blue-500 text-white px-4 py-2 rounded w-[50%]">Cancel</button>
                 </div>
 
             </div>
@@ -256,47 +288,48 @@
     </section>
 
     <!-- start footer -->
-    <section">
+    <section>
         <!-- FIRST PART -->
-            <div class="flex justify-around items-center bg-black">
-                <p class="font-bold text-lg">Contact Us on Social Networks</p>
-                <ul class="flex w-16 gap-1">
-                    <li><a href="#"><img src="img/youtube.png"></a></li>
-                    <li><a href="#"><img src="img/facebook-app-symbol.png"></a></li>
-                    <li><a href="#"><img src="img/social-media.png"></a></li>
-                    <li><a href="#"><img src="img/instagram.png"></a></li>
+            <div class="flex justify-around items-center bg-[#946605] h-16 p-4">
+                <p class=" text-xl">Contact Us on Social Networks</p>
+                <ul class="flex  gap-4">
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"></a><i class="fa-brands fa-twitter"></i></li>
+                    <li><a href="#"></a><i class="fa-brands fa-youtube"></i></li>
                 </ul>
             </div>
         <!-- END FIRST PART  -->
 
         <!-- SECOND PART  -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 justify-evenly bg-black h-40 ">
-                <div class="border border-dashed border-blue-300 ">
-                    <h3 class="font-bold text-lg underline">Latest Squads</h3>
-                    <ul class="">
-                        <li><a href="#">FC Pro</a></li>
-                        <li><a href="#">Team Of the week 10</a></li>
-                        <li><a href="#">Track Stars</a></li>
-                        <li><a href="#">Ballon d'or</a></li>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 justify-evenly bg-black py-4 text-center">
+                <div class=" space-y-4 ">
+                    <h3 class="font-bold text-lg underline decoration-[#c9a04a] text-[#c9a04a]">Latest Squads</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#">Thunderstruck Icon</a></li>
+                        <li><a href="#">Thunderstruck</a></li>
+                        <li><a href="#">Team of the week 11</a></li>
+                        <li><a href="#">Team of the week 10</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="font-bold text-lg underline">Useful Links</h3>
-                    <ul>
+                <div class=" space-y-4">
+                    <h3 class="font-bold text-lg underline decoration-[#c9a04a] text-[#c9a04a]">Useful Links</h3>
+                    <ul class="space-y-1">
                         <li><a href="#">Squad Builder</a></li>
                         <li><a href="#">EA FC 25 Players</a></li>
                         <li><a href="#">SBC</a></li>
-                        <li><a href="#">SBC</a></li>
                     </ul>
                 </div>
 
-                <div class="flex flex-col ">
-                    <h3 class="font-bold text-lg underline">Application</h3>
-                    <div class="flex w-16 gap-1 justify-around">
-                        <a href="#"><img src="img/play-store.png"></a>
-                        <a href="#"><img src="img/app-store.png" alt=""></a>
-                    </div>
+                <div class="flex flex-col   space-y-4">
+                    <h3 class="font-bold text-lg underline decoration-[#c9a04a] text-[#c9a04a]">Application</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#">FUT for Android</a></li>
+                        <li><a href="#">FUT for IOS</a></li>
+                        <li><a href="#">More Details</a></li>
+                    </ul>
+                    
                 </div>
             </div>
         <!-- END SECOND PART  -->

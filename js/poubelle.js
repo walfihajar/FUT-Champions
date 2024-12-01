@@ -73,49 +73,68 @@
 // document.addEventListener("DOMContentLoaded",()=>{
 
 
-    <div class="relative flex justify-center items-center text-black">
+    
 
-                    <img src="img/yellow-card.png" class="object-contain" height="170" width="120" alt="">
-                    <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
-                        <img src="${player.photo}" class="object-contain mb-4" height="60" width="60">
-                        <div class="absolute left-[16.3%] top-[20%] text-center">
-                            <div class="font-bold text-xs">${player.rating}</div>
-                            <div class="font-semibold text-[0.5rem]">${player.position}</div>
-                        </div>
-                        <div class="absolute top-[66%] text-center">
-                            <div class="font-bold text-[0.5rem]">${player.name}</div>
-                            <div class="flex font-semibold text-[0.3rem] justify-around gap-[2px]">
-                                <div class="flex flex-col">
-                                    <span>PAC</span>
-                                    <span>${player.pace}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>SHO</span>
-                                    <span>${player.shooting}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>PAS</span>
-                                    <span>${player.passing}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>DRI</span>
-                                    <span>${player.dribbling}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>DEF</span>
-                                    <span>${player.defending}</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>PHY</span>
-                                    <span>${player.physical}</span>
-                                </div>
-                            </div>
 
-                            <div class="absolute flex gap-1 top-[46%] left-[22%]  mt-1 items-center">
-                                <div ><img src="${player.flag}" class="object-contain" width="10" height="10" alt=""></div>
-                                <div><img src="${player.club}" class="object-contain" width="10" height="10" alt=""></div>
-                                <div><img src="${player.logo}" class="object-contain" width="10" height="10" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    function afficherSelect(button, position) {
+        const joueursFiltres = filtrer(position);
+    
+        // Afficher le modal
+        const modal = document.getElementById("select-modal");
+        modal.classList.remove("hidden");
+    
+        // Populate the dropdown
+        const select = document.getElementById("player-select");
+        select.innerHTML = ""; // Clear any existing options
+    
+        // Supprimer l'ancien select dans la carte, si existant
+        const oldSelect = button.parentElement.querySelector("select");
+        if (oldSelect) oldSelect.remove();
+    
+        // Ajouter une option par défaut
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Sélectionner un joueur";
+        select.appendChild(defaultOption);
+    
+        joueursFiltres.forEach((player, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = player.name;
+            select.appendChild(option);
+        });
+    
+        const getCard = button.parentElement;
+    
+        document.getElementById("cancel-select").addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+    
+        // Bouton Confirmer
+        const confirmButton = document.getElementById("confirm-select");
+        confirmButton.onclick = () => {
+            const selectedIndex = select.value;
+    
+            if (selectedIndex === "") {
+                alert("Veuillez sélectionner un joueur.");
+                return;
+            }
+    
+            const player = joueursFiltres[selectedIndex];
+            if (player) {
+                // Afficher le joueur dans la carte
+                getCard.innerHTML = afficherJoueurTerrain(player);
+    
+                // Retirer le joueur de la liste principale
+                players = players.filter((p) => p !== player);
+    
+                // Mettre à jour l'affichage global
+                afficher();
+    
+                // Cacher le modal
+                modal.classList.add("hidden");
+            } else {
+                alert("Ce joueur n'existe pas.");
+            }
+        };
+    }
