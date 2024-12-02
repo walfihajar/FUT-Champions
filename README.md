@@ -31,6 +31,9 @@ Cette application web permet aux utilisateurs de créer, personnaliser et gérer
 - **HTML5**
 - **CSS3**
 - **JavaScript (DOM natif)**
-- **Git**
+- **Tailwind CSS**
+- **Git et Github**
+- **Github Planning**
+
 
 ---

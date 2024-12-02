@@ -14,7 +14,11 @@ body{
     color: white;
 }
 .statistique h5, .statistique h4{
-    font-size: 9px; 
+    font-size: 7px; 
+}
+.nom {
+    font-size: 9px;
+    font-weight: bold;
 }
 ::-webkit-scrollbar {
     width: 5px;

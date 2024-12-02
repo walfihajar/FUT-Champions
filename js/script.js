@@ -704,7 +704,7 @@ function afficherJoueurTerrain(player, index) {
                 <p class="nom text-xs text-center">${player.name}</p>
 
                 <!-- Statistiques -->
-                <div class="statistique grid grid-cols-3 border place-items-center border-dashed w-full border-red-700">
+                <div class="statistique grid grid-cols-3 justify-center items-center w-full">
                     <div class="flex flex-col">
                         <h4 class="test-sm">${statsLabels.pac}</h4>
                         <h4 class="text-xs">${player.pace}</h4>
@@ -738,13 +738,12 @@ function afficherJoueurTerrain(player, index) {
                 </div>
 
                 <!-- Action Buttons (hidden by default, visible on hover) -->
-                <div class="actions absolute top-0 left-0 w-full h-full flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button onclick="afficherSelect(this, '${player.position}')" class="replace-button bg-blue-500 text-white text-xs px-2 py-1 rounded" data-index="${player.id}">Remplacer</button>
+                <div class="actions absolute top-0 left-0 w-full h-full flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100">
+                    <button class="sortir-button bg-blue-500 text-white text-xs px-2 py-1 rounded">Sortir</button>
                 </div>
             </div>
             `;
 }
-
 
 
 

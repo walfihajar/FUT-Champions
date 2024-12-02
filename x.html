@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUT - Getion des players</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="w-full h-full">
+
+    <header class="w-full h-[100px] flex justify-between items-center px-20">
+        <a href="../index.html"><h1 class="text-4xl font-bold text-yellowColor cursor-pointer">FUT<i class="fa-solid fa-futbol"></i></h1></a>
+        <ul class="flex gap-10 text-lg font-semibold">
+            <li><a href="../index.html" class="hover:text-yellowColor duration-300 text-white">Home</a></li>
+            <li><a href="gestion.html" class="hover:text-yellowColor duration-300 text-white">Gestion</a></li>
+            <li><a href="gestion.html" class="hover:text-yellowColor duration-300 text-white">Contact</a></li>
+        </ul>
+    </header>
+
+
+    <aside class="max-w-[300px] w-full h-full absolute right-14 top-[150px] z-10 max-xl:hidden">
+
+        <div class="topAjoute h-[10%] flex justify-center items-center mb-5">
+            <button id="openAjoutSection" class="w-[160px] h-[45px] bg-transparent text-orangeColor text-lg font-semibold rounded-[5px] border-2 border-orangeColor hover:bg-orangeColor hover:text-black duration-150">ADD Player</button>
+        </div>
+
+        <div class="searchSection w-full h-[6%] flex justify-center items-center ">
+            <input id="getSearchInput" type="text" placeholder="Search for player" class="w-2/3 h-[35px] pl-4 border-none outline-none rounded-[8px]">
+        </div>
+
+
+        <div id="listElement" class="players w-full h-[84%] flex flex-col items-center gap-2 p-2 mt-2 bg-[#28282879] rounded-[5px] overflow-y-auto">
+
+            <!-- <div class="player w-full min-h-[60px] bg-[#2a2a30] flex items-center justify-between rounded-[5px]">
+    
+                <div class="flex items-center w-[70%] pl-5 cursor-pointer">
+                        <div class="profileImage w-[40px] h-[40px] rounded-[50%] bg-[#bfbfbf] overflow-hidden">
+                            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="messi image profile" class="w-[40px] h-[40px]">
+                        </div>
+                        <div class="playerInformation flex flex-col justify-evenly pl-4">
+                            <h3 class="text-white">Lionel Messi</h3>
+                            <h6 class="text-[#b0b0b0]">Argentina</h6>
+                        </div>
+                </div>
+
+                <div class="w-[20%] h-full flex justify-center items-center">
+                    <i class="fa-solid fa-trash text-xl text-red-600 cursor-pointer"></i>
+                </div>
+            </div>            -->
+        </div>
+
+    </aside>
+    
+
+    <div class="planning pl-[30vw] mt-[60px] max-xl:pl-0 max-xl:flex max-xl:items-center max-xl:flex-col">
+        <h2 class="text-2xl text-yellowColor mb-5">Select Formation</h2>
+        <select id="getPlanningSelect" class="w-[180px] h-[40px] rounded-[15px] outline-none border-none pl-4">
+            <option value="4-3-3">4-3-3</option>
+            <option value="4-4-2">4-4-2</option>
+        </select>
+    </div>
+
+
+    <section class="terrain w-[75vw] h-[70vw] my-10 bg-[length:100%_100%] bg-no-repeat bg-center grid grid-cols-[150px_150px_150px_150px_150px] grid-rows-[180px_180px_180px_180px] gap-1 max-xl:w-[100vw] justify-center content-center max-lg:grid-cols-[100px_100px_100px_100px_100px] max-lg:grid-rows-[130px_130px_130px_130px] max-lg:gap-[3vw] max-md:grid-cols-[85px_85px_85px_85px_85px] max-md:grid-rows-[110px_110px_110px_110px] max-md:bg-[length:120%_100%]  max-sm:grid-cols-[75px_75px_75px_75px_75px] max-sm:grid-rows-[95px_95px_95px_95px] max-sm:gap-12 max-sm:overflow-x-auto max-[620px]:w-[120vw] max-sm:h-[100vw] max-[420px]:h-[150vw] max-[600px]:gap-5 max-[480px]:gap-2">
+
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[-20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center">
+                <div class="h-[35%] w-full relative flex flex-col justify-end pl-6  max-md:pl-3">
+                    <h2 class="font-bold text-[1rem] mb-[-2px] max-lg:text-[0.7rem] max-md:text-[0.5rem]">88</h2>
+                    <h3 class="text-[0.5rem] font-semibold max-lg:text-[0.5rem] max-md:text-[0.3rem]">RW</h3>
+                </div>
+                <div class="w-full h-[31%] flex items-end justify-center">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Lionel Messi" class="w-[85px] h-[85px] max-lg:w-[50px] max-lg:h-[50px]">
+                </div>
+                <div class="w-full h-[28%]">
+                    <h2 class="w-full text-center text-[0.6rem] font-bold max-lg:text-[0.4rem]  max-md:text-[0.3rem]">Lionel Messi</h2>
+                    <div class="w-full flex justify-center gap-2  max-lg:gap-[3px]">
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px] max-lg:text-[0.25rem] max-md:text-[0.2rem] max-md:mb-[-2px]">PAC</h5>
+                            <h6 class="text-[0.6rem] font-semibold max-lg:text-[0.45rem] max-md:text-[0.4rem]">79</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px] max-lg:text-[0.25rem] max-md:text-[0.2rem] max-md:mb-[-2px]">SHO</h5>
+                            <h6 class="text-[0.6rem] font-semibold max-lg:text-[0.45rem] max-md:text-[0.4rem]">85</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px] max-lg:text-[0.25rem] max-md:text-[0.2rem] max-md:mb-[-2px]">PAS</h5>
+                            <h6 class="text-[0.6rem] font-semibold max-lg:text-[0.45rem] max-md:text-[0.4rem]">87</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px] max-lg:text-[0.25rem] max-md:text-[0.2rem] max-md:mb-[-2px]">DRI</h5>
+                            <h6 class="text-[0.6rem] font-semibold max-lg:text-[0.45rem] max-md:text-[0.4rem]">92</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px] max-lg:text-[0.25rem] max-md:text-[0.2rem] max-md:mb-[-2px]">DEF</h5>
+                            <h6 class="text-[0.6rem] font-semibold max-lg:text-[0.45rem] max-md:text-[0.4rem]">33</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px] max-lg:text-[0.25rem] max-md:text-[0.2rem]  max-md:mb-[-2px]">PHY</h5>
+                            <h6 class="text-[0.6rem] font-semibold max-lg:text-[0.45rem] max-md:text-[0.4rem]">64</h6>
+                        </div>
+                    </div>
+                    <div class="flags flex justify-center items-center gap-2 h-[28%] items-end  max-lg:gap-1  max-md:h-[20%]">
+                        <img src="https://cdn.sofifa.net/flags/ar.png" alt="Argentina" class="w-[15px] h-[10px]  max-md:w-[8px]  max-md:h-[5px]">
+                        <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="Inter Miami"  class="w-[10px] h-[10px]  max-md:w-[8px]  max-md:h-[8px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card flex justify-center items-center text-[#3b3419]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[-20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419]  translate-y-[-20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-x-[50px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-x-[-50px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[-20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[-20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-x-[50px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[20px] ">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-x-[-50px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[-20px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419]">
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419]">
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419] translate-y-[10px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center flex justify-center items-center ">
+                <span class="text-6xl">+</span>
+            </div>
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419]">
+        </div>
+        <div class="card flex justify-center items-center text-[#3b3419]">
+        </div>
+        <!-- <div class="flex justify-center items-center text-[#3b3419] translate-y-[10px]">
+            <div class="h-full w-full bg-[url(../img/badge_gold.webp)] bg-[length:100%_115%] bg-no-repeat bg-center">
+                <div class="h-[35%] w-full relative flex flex-col justify-end pl-6">
+                    <h2 class="font-bold text-[1rem] mb-[-2px]">88</h2>
+                    <h3 class="text-[0.5rem] font-semibold">RW</h3>
+                </div>
+                <div class="w-full h-[31%] flex items-end justify-center">
+                    <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Lionel Messi" width="85px" height="85px">
+                </div>
+                <div class="w-full h-[28%]">
+                    <h2 class="w-full text-center text-[0.6rem] font-bold">Lionel Messi</h2>
+                    <div class="w-full flex justify-center gap-2">
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px]">PAC</h5>
+                            <h6 class="text-[0.6rem] font-semibold">79</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px]">SHO</h5>
+                            <h6 class="text-[0.6rem] font-semibold">85</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px]">PAS</h5>
+                            <h6 class="text-[0.6rem] font-semibold">87</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px]">DRI</h5>
+                            <h6 class="text-[0.6rem] font-semibold">92</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px]">DEF</h5>
+                            <h6 class="text-[0.6rem] font-semibold">33</h6>
+                        </div>
+                        <div>
+                            <h5 class="text-[0.35rem] font-medium mb-[-4px]">PHY</h5>
+                            <h6 class="text-[0.6rem] font-semibold">64</h6>
+                        </div>
+                    </div>
+                    <div class="flags flex justify-center gap-2 h-[28%] items-end">
+                        <img src="https://cdn.sofifa.net/flags/ar.png" alt="Argentina" class="w-[15px] h-[10px]">
+                        <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="Inter Miami"  class="w-[10px] h-[10px]">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+    </section>
+
+
+
+    <section class="changementSection w-full h-full min-h-[400px] flex justify-center mb-20 cursor-pointer">
+        <div class="changements w-[90%] bg-[#2a2a30] rounded-[10px]">
+            <div class="topChangement w-full h-[80px] flex items-center pl-10 border-b-2 border-yellowColor">
+                <h2 class="text-2xl text-yellowColor">Changement</h2>
+            </div>
+            <div id="changementElement" class="afficheChangement p-4 flex gap-3 flex-wrap justify-center">
+
+                <!-- <div draggable="true" class="changement w-full max-w-[200px] h-[280px] bg-[#1a1a1a] rounded-[15px] text-white shadow-[0px_0px_3px_-1px_yellow]">
+
+                    <div class="topCardChangement h-[35%] w-full flex justify-center items-center">
+                        <div class="profileChangement w-[80px] h-[80px] rounded-[50%] bg-[#6c6c6c] flex justify-center items-center overflow-hidden">
+                            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" class="w-[80px] h-[80px]">
+                        </div>
+                    </div>
+                    <div class="contentCardChangement w-full h-[65%]">
+                        <div class="nameCard flex flex-col items-center h-20%">
+                            <h2 class="font-bold text-md mb-[-3px]">Lionel Messi</h2>
+                            <h3 class="font-medium text-sm text-[#868686]">Argentina</h3>
+                        </div>
+                        <div class="competanceCard p-2 h-[60%] justify-center grid grid-cols-[auto_auto_auto] grid-rows-[auto_auto] gap-x-5">
+                            <div>
+                                <h5 class="text-[0.7rem] font-medium text-yellowColor mb-[-4px]">PAC</h5>
+                                <h6 class="text-[1rem] font-semibold">79</h6>
+                            </div>
+                            <div>
+                                <h5 class="text-[0.7rem] font-medium text-yellowColor mb-[-4px]">SHO</h5>
+                                <h6 class="text-[1rem] font-semibold">85</h6>
+                            </div>
+                            <div>
+                                <h5 class="text-[0.7rem] font-medium text-yellowColor mb-[-4px]">PAS</h5>
+                                <h6 class="text-[1rem] font-semibold">87</h6>
+                            </div>
+                            <div>
+                                <h5 class="text-[0.7rem] font-medium text-yellowColor mb-[-4px]">DRI</h5>
+                                <h6 class="text-[1rem] font-semibold">92</h6>
+                            </div>
+                            <div>
+                                <h5 class="text-[0.7rem] font-medium text-yellowColor mb-[-4px]">DEF</h5>
+                                <h6 class="text-[1rem] font-semibold">33</h6>
+                            </div>
+                            <div>
+                                <h5 class="text-[0.7rem] font-medium text-yellowColor mb-[-4px]">PHY</h5>
+                                <h6 class="text-[1rem] font-semibold">64</h6>
+                            </div>
+                        </div>
+                        <div class="cardBottomChangement w-full h-[17%] flex justify-center gap-3">
+                            <img src="https://cdn.sofifa.net/flags/ar.png" alt="Argentina" class="w-[30px] h-[20px]">
+                            <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt="Inter Miami"  class="w-[20px] h-[20px]">
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <div id="ajouteSection" class="formuleAjouteSection w-full h-[100vh] bg-[#282828b5] flex justify-center items-center fixed top-0 z-20 overflow-auto hidden">
+        <span id="closeAjoutSection" class="absolute left-10 top-10 text-yellowColor text-4xl w-[50px] h-[50px] rounded-[50%] bg-[#161616] flex justify-center items-center cursor-pointer"><i class="fa-solid fa-xmark"></i></span>
+        <div class="ajouteFormule w-full max-w-[450px] h-[550px] max-h-[80vh] bg-[#282828] rounded-[5px] flex flex-col items-center justify-center gap-5 px-7">
+            <h2 class="text-yellowColor text-xl mb-4">Add Player</h2>
+            <input id="getNameElement" type="text" placeholder="Full Name" class="w-[90%] h-[35px] pl-4 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+            <input id="getImageElement" type="text" placeholder="Profile image src" class="w-[90%] h-[35px] pl-4 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+            <div class="w-full flex justify-center gap-2">
+                <select id="getPositionElement" required class="h-[30px] w-[33%] rounded-[5px] outline-none border-none border-2">
+                    <option disabled selected>Position</option>
+                    <option value="LW">LW</option>
+                    <option value="LF">LF</option>
+                    <option value="CF">CF</option>
+                    <option value="RF">RF</option>
+                    <option value="RW">RW</option>
+                    <option value="CAM">CAM</option>
+                    <option value="CM">CM</option>
+                    <option value="RM">RM</option>
+                    <option value="LM">LM</option>
+                    <option value="CDM">CDM</option>
+                    <option value="CB">CB</option>
+                    <option value="LB">LB</option>
+                    <option value="RB">RB</option>
+                    <option value="LWB">LWB</option>
+                    <option value="RWB">RWB</option>
+                    <option value="GK">GK</option>
+                </select>
+                <select id="getNationalityElement" required class="h-[30px] w-[33%] rounded-[5px] outline-none border-none border-2">
+                    <option disabled selected>Nationality</option>
+                    <option value="AG">Argentina</option>
+                    <option value="PG">Portugal</option>
+                    <option value="FR">France</option>
+                    <option value="BZ">Brazil</option>
+                    <option value="EG">Egypt</option>
+                </select>
+                <select id="getClubElement" required class="h-[30px] w-[33%] rounded-[5px] outline-none border-none border-2">
+                    <option disabled selected>Club</option>
+                    <option value="IM">Inter Miami</option>
+                    <option value="AN">Al Nassr</option>
+                    <option value="MC">Manchester City</option>
+                    <option value="RM">Real Madrid</option>
+                    <option value="LP">Liverpool</option>
+                </select>
+            </div>
+            <div class="skills flex gap-5 flex-wrap w-[80%]">
+                <div class="skill flex items-center gap-2">
+                    <h5 class="text-white">RAT</h5> <input id="getRatElement" type="number" value="10" class="w-[45px] h-[40px] pl-1 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+                </div>
+                <div class="skill flex items-center gap-2">
+                    <h5 class="text-white">PAC</h5> <input id="getPacElement" type="number" value="10" class="w-[45px] h-[40px] pl-1 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+                </div>
+                <div class="skill flex items-center gap-2">
+                    <h5 class="text-white">SHO</h5> <input id="getShoElement" type="number" value="10" class="w-[45px] h-[40px] pl-1 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+                </div>
+                <div class="skill flex items-center gap-2">
+                    <h5 class="text-white">PAS</h5> <input id="getPasElement" type="number" value="10" class="w-[45px] h-[40px] pl-1 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+                </div>
+                <div class="skill flex items-center gap-2">
+                    <h5 class="text-white">DRI</h5> <input id="getDriElement" type="number" value="10" class="w-[45px] h-[40px] pl-1 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+                </div>
+                <div class="skill flex items-center gap-2">
+                    <h5 class="text-white">DEF</h5> <input id="getDefElement" type="number" value="10" class="w-[45px] h-[40px] pl-1 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+                </div>
+                <div class="skill flex items-center gap-2">
+                    <h5 class="text-white">PHY</h5> <input id="getPhyElement" type="number" value="10" class="w-[45px] h-[40px] pl-1 rounded-[5px] border-black border-2 bg-[#1f1f1fb5] outline-none text-white focus:border-yellowColor">
+                </div>
+            </div>
+            <button id="buttonSubmit" class="w-[150px] h-[45px] bg-orangeColor text-md font-semibold rounded-[10px]">ADD Player</button>
+        </div>
+    </div>
+
+    <div id="addSuccess" class="fixed top-10 h-[70px] w-full flex justify-center hidden"><div class="w-full max-w-[400px] bg-[#1dbb1d] h-full rounded-[5px] border-4 border-[green] flex items-center pl-5">
+        <h6 class="font-semibold text-white">Player has been added avec success</h6>
+    </div></div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
