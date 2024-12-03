@@ -40,7 +40,7 @@
             <div class=" flex gap-4 items-center justify-center  ">
                 <!-- card of player1 -->
                 <div  class="badge_gold flex flex-col justify-center items-center  bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
-                    <button value="STL" class="position-button" data-position="ST"><img class="w-4" src="./img/plus.png"></button>
+                    <button class="position-button" data-position="ST"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
             <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player2 -->
                 <div class="badge_gold flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
-                    <button  value="STR" class="position-button" data-position="ST"><img class="w-4" src="./img/plus.png"></button>
+                    <button  class="position-button" data-position="ST"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>  
 
@@ -58,7 +58,7 @@
             <div class="last3  flex gap-4 items-center justify-center  ">
                 <!-- card of player3 -->
                 <div class="badge_gold self-start flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
-                    <button class="position-button" data-position="RM"><img class="w-4" src="./img/plus.png"></button>
+                    <button class="position-button" data-position="LW"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>  
 
@@ -81,7 +81,7 @@
             <div class="last3 self-start  flex gap-4 items-center justify-center  ">
                 <!-- card of player6 -->
                 <div class="badge_gold flex flex-col justify-center items-center bg-contain bg-[url('img/yellow-card.png')] bg-center bg-no-repeat w-[150px] h-[200px]" >
-                    <button class="position-button" data-position="RM"><img class="w-4" src="./img/plus.png"></button>
+                    <button class="position-button" data-position="RW"><img class="w-4" src="./img/plus.png"></button>
                 </div>
             </div>  
 
@@ -171,14 +171,11 @@
                         <div class="flex flex-col gap-1">
                             <label  for="position">Position:</label>
                             <select id="position" class="bg-gray-50 border border-[#c9a04a] text-gray-900 text-sm rounded-lg p-2.5 focus:outline-none focus:ring focus:ring-[#c9a04a]">
-                                <option value="ST">Attaquant (ST): Gauche</option>
-                                <option value="ST">Attaquant (ST): Droit</option>
-                                <option value="RM">Milieu Droit (RM)</option>
-                                <option value="LM">Milieu Gauche (LM)</option>
-                                <option value="CM">Milieu central (CM) : Gauche</option>
-                                <option value="CM">Milieu central (CM) : Droit</option>
-                                <option value="CB">Defenseur central (CB) : Gauche</option>
-                                <option value="CB">Defenseur central (CB) : Droit</option>
+                                <option value="ST">Attaquant (ST)</option>
+                                <option value="LW">Milieu Droit (RM)</option>
+                                <option value="RM">Milieu Gauche (LM)</option>
+                                <option value="CM">Milieu central (CM)</option>
+                                <option value="CB">Defenseur central (CB)</option>
                                 <option value="LB">Latéral gauche (LB)</option>
                                 <option value="RB">Latéral droit (RB)</option>
                                 <option value="GK">Gardien de But (GK)</option>
