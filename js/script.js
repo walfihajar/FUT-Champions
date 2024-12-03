@@ -468,12 +468,8 @@ save.addEventListener("click", (e) => {
         error = 'Veuillez entrer un nombre valide (entre 0 et 100)';
     } else if (def == '' || isNaN(def) || def > 100 || def < 0) {
         error = 'Veuillez entrer un nombre valide (entre 0 et 100)';
-    }else if (!photo) {
+    }else if (photo == '' || flag == '' || club == '') {
         error = "Veuillez entrer une URL de photo valide";
-    } else if (!flag) {
-        error = "Veuillez entrer une URL de drapeau valide";
-    } else if (!club) {
-        error = "Veuillez entrer une URL pour le club valide";
     }
 
     if (error) {
